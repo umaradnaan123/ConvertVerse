@@ -8,4 +8,4 @@ Disallow: /temp/
 Disallow: /api/
 Disallow: /*.vault$
 
-Sitemap: https://convert-verse-8l9l-k1jn1ubtw-umaradnaan123s-projects.vercel.app/sitemap.xml
+Sitemap: https://convert-verse.vercel.app/sitemap.xml
