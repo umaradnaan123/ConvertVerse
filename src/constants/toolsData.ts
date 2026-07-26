@@ -7,6 +7,7 @@ export interface ToolMetaData {
   seoDescription: string;
   keywords: string[];
   canonicalUrl: string;
+  path: string;
   iconName: string;
   badge?: string;
   features: string[];
@@ -27,7 +28,8 @@ export const TOOLS_REGISTRY: Record<string, ToolMetaData> = {
     seoTitle: 'ConvertVerse | Free Online PDF & Image Converter Hub',
     seoDescription: 'ConvertVerse is a private, 100% browser-based utility platform to compress images, edit PDFs, convert formats, and optimize media files locally.',
     keywords: ['file converter online', 'free pdf compressor', 'local image resizer', 'browser file utility', 'privacy first converter'],
-    canonicalUrl: `${BASE_URL}/#dashboard`,
+    path: '/',
+    canonicalUrl: `${BASE_URL}/`,
     iconName: 'LayoutDashboard',
     badge: 'Popular',
     features: [
@@ -70,7 +72,8 @@ Whether you need to compress high-resolution photography, split or visually merg
     seoTitle: 'Free Online PDF Merger, Splitter & Visual Page Editor',
     seoDescription: 'Merge PDF files, split pages using custom ranges, rotate layouts, and add page numbers in seconds. 100% local browser processing.',
     keywords: ['merge pdf online', 'split pdf free', 'pdf visual editor', 'add page numbers to pdf', 'rotate pdf pages'],
-    canonicalUrl: `${BASE_URL}/#pdf`,
+    path: '/pdf-tools',
+    canonicalUrl: `${BASE_URL}/pdf-tools`,
     iconName: 'FileText',
     badge: 'Essential',
     features: [
@@ -113,7 +116,8 @@ Managing contracts, report assemblies, e-books, and academic papers is effortles
     seoTitle: 'Online Image Resizer, Compressor & HEIC Converter',
     seoDescription: 'Batch compress image files, resize with physical metric DPI controls (in/cm/mm), decode Apple HEIC photos, and scrub EXIF data locally.',
     keywords: ['image compressor online', 'online image resizer', 'HEIC to JPG converter', 'EXIF metadata scrubber', 'DPI metric resizer'],
-    canonicalUrl: `${BASE_URL}/#image-tools`,
+    path: '/image-tools',
+    canonicalUrl: `${BASE_URL}/image-tools`,
     iconName: 'Image',
     badge: 'Popular',
     features: [
@@ -156,7 +160,8 @@ Our metric resizer converts real-world physical measurements (in, cm, mm) into e
     seoTitle: 'Universal Batch File Compressor | Reduce PDF & Image Sizes',
     seoDescription: 'Shrink file sizes for images, PDFs, and media documents in a unified batch queue. Instant local compression without loss of quality.',
     keywords: ['universal file compressor', 'batch pdf shrinker', 'compress multiple images', 'reduce document size online'],
-    canonicalUrl: `${BASE_URL}/#universal-compressor`,
+    path: '/universal-compressor',
+    canonicalUrl: `${BASE_URL}/universal-compressor`,
     iconName: 'Minimize2',
     features: [
       'Multi-Format Batch File Queue',
@@ -191,7 +196,8 @@ Our metric resizer converts real-world physical measurements (in, cm, mm) into e
     seoTitle: 'Client-Side AES-256 Crypto Vault & Privacy Censor Shield',
     seoDescription: 'Encrypt files locally using military-grade AES-256 encryption, censor sensitive photo regions, and create self-destruct memory sharing links.',
     keywords: ['AES-256 file encryption', 'client side file vault', 'photo face censor blur', 'self destructing file link'],
-    canonicalUrl: `${BASE_URL}/#ai-secure-vault`,
+    path: '/ai-secure-vault',
+    canonicalUrl: `${BASE_URL}/ai-secure-vault`,
     iconName: 'ShieldCheck',
     badge: 'Security',
     features: [
@@ -227,7 +233,8 @@ Our metric resizer converts real-world physical measurements (in, cm, mm) into e
     seoTitle: 'Smart AI SEO Media Optimizer & Core Web Vitals Auditor',
     seoDescription: 'Audit image Web Vitals, generate responsive picture tags with lazy loading, build Open Graph cards, and compile favicon packages instantly.',
     keywords: ['Core Web Vitals image audit', 'Open Graph card designer', 'favicon generator online', 'responsive picture tag compiler'],
-    canonicalUrl: `${BASE_URL}/#seo-media-optimizer`,
+    path: '/seo-media-optimizer',
+    canonicalUrl: `${BASE_URL}/seo-media-optimizer`,
     iconName: 'Sparkles',
     features: [
       'Core Web Vitals Image Impact Auditor',
@@ -262,7 +269,8 @@ Our metric resizer converts real-world physical measurements (in, cm, mm) into e
     seoTitle: 'Universal File Converter | PDF, DOCX, TXT, HTML, JSON, Images',
     seoDescription: 'Convert documents and media between PDF, Word, TXT, HTML, JSON, and image formats instantly in your browser with complete privacy.',
     keywords: ['universal file converter', 'pdf to text', 'word to pdf online', 'json to csv converter'],
-    canonicalUrl: `${BASE_URL}/#converter`,
+    path: '/converter',
+    canonicalUrl: `${BASE_URL}/converter`,
     iconName: 'RefreshCw',
     features: [
       'Multi-format Universal Document & Media Converter',
@@ -297,7 +305,8 @@ Our metric resizer converts real-world physical measurements (in, cm, mm) into e
     seoTitle: 'Local OCR Scanner & AI Document Analysis Toolkit',
     seoDescription: 'Extract text from scanned images using client-side Tesseract.js OCR, analyze documents, and format extracted content locally.',
     keywords: ['local OCR scanner', 'image to text converter', 'extract text from scan', 'browser OCR tool'],
-    canonicalUrl: `${BASE_URL}/#ai-document-toolkit`,
+    path: '/ai-document-toolkit',
+    canonicalUrl: `${BASE_URL}/ai-document-toolkit`,
     iconName: 'Cpu',
     badge: 'AI Powered',
     features: [
@@ -333,7 +342,8 @@ Our metric resizer converts real-world physical measurements (in, cm, mm) into e
     seoTitle: 'Batch Automation Studio | Sequential File Pipeline Builder',
     seoDescription: 'Construct offline batch workflow pipelines to resize, rename, overlay watermarks, and compress hundreds of files automatically.',
     keywords: ['batch file processing', 'automated workflow builder', 'batch image watermark', 'batch file renamer'],
-    canonicalUrl: `${BASE_URL}/#batch-automation`,
+    path: '/batch-automation',
+    canonicalUrl: `${BASE_URL}/batch-automation`,
     iconName: 'Workflow',
     features: [
       'Drag & Drop Workflow Pipeline Builder',
@@ -361,3 +371,24 @@ Our metric resizer converts real-world physical measurements (in, cm, mm) into e
     longContent: `The Batch Automation Studio is designed for power users who manage large volumes of digital assets. By constructing sequential pipelines—such as applying text watermarks, resizing images to web specs, appending brand prefixes, and saving into structured ZIP archives—users eliminate hours of repetitive manual editing.`
   }
 };
+
+/**
+ * Route path resolver mapping URL path (e.g. "/pdf-tools") to tool ID
+ */
+export function resolveToolByPath(pathname: string): ToolMetaData {
+  const normalized = pathname.toLowerCase().replace(/\/$/, '') || '/';
+  
+  for (const key of Object.keys(TOOLS_REGISTRY)) {
+    const tool = TOOLS_REGISTRY[key];
+    if (tool.path === normalized) {
+      return tool;
+    }
+  }
+
+  // Alias fallbacks for SEO friendly path variants
+  if (normalized === '/pdf' || normalized === '/pdf-editor' || normalized === '/pdf-security') return TOOLS_REGISTRY['pdf'];
+  if (normalized === '/image' || normalized === '/resizer' || normalized === '/compressor') return TOOLS_REGISTRY['image-tools'];
+  if (normalized === '/dashboard') return TOOLS_REGISTRY['dashboard'];
+
+  return TOOLS_REGISTRY['dashboard'];
+}

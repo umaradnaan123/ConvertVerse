@@ -39,21 +39,20 @@ export const SEOHead: React.FC<SEOHeadProps> = ({ currentView, currentSubTab }) 
     }
     metaKeywords.content = tool.keywords.join(', ');
 
-    // 4. Update Canonical URL
+    // 4. Update Canonical URL (Clean URL without # fragments)
     let canonical = document.querySelector<HTMLLinkElement>('link[rel="canonical"]');
     if (!canonical) {
       canonical = document.createElement('link');
       canonical.rel = 'canonical';
       document.head.appendChild(canonical);
     }
-    const hash = currentSubTab ? `${currentView}/${currentSubTab}` : currentView;
-    canonical.href = `${BASE_URL}/#${hash}`;
+    canonical.href = tool.canonicalUrl;
 
     // 5. Update Open Graph Tags
     const ogTags = [
       { property: 'og:title', content: tool.seoTitle },
       { property: 'og:description', content: tool.seoDescription },
-      { property: 'og:url', content: canonical.href },
+      { property: 'og:url', content: tool.canonicalUrl },
       { property: 'og:type', content: 'website' },
       { property: 'og:site_name', content: 'ConvertVerse' },
       { property: 'og:image', content: `${BASE_URL}/favicon.svg` }

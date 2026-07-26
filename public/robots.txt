@@ -1,10 +1,11 @@
 User-agent: *
 Allow: /
-Allow: /#*
 
-# Disallow private or temporary files
+# Private & API routes
+Disallow: /admin/
+Disallow: /private/
 Disallow: /temp/
-Disallow: /api/private/
+Disallow: /api/
 Disallow: /*.vault$
 
 Sitemap: https://convert-verse-8l9l-k1jn1ubtw-umaradnaan123s-projects.vercel.app/sitemap.xml

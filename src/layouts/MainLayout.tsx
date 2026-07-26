@@ -16,11 +16,10 @@ import {
   ExternalLink,
   Shield,
   Zap,
-  Globe,
   Sun,
   Moon
 } from 'lucide-react';
-import { TOOLS_REGISTRY, BASE_URL } from '../constants/toolsData';
+import { TOOLS_REGISTRY } from '../constants/toolsData';
 
 interface MainLayoutProps {
   currentView: string;
@@ -47,15 +46,15 @@ export const MainLayout: React.FC<MainLayoutProps> = ({
   };
 
   const navItems = [
-    { id: 'dashboard', label: 'Dashboard', icon: LayoutDashboard },
-    { id: 'pdf', label: 'PDF Toolbox', icon: FileText, badge: 'Popular' },
-    { id: 'image-tools', label: 'Image Suite', icon: ImageIcon },
-    { id: 'universal-compressor', label: 'Compressor', icon: Minimize2 },
-    { id: 'ai-secure-vault', label: 'AI Secure Vault', icon: ShieldCheck, badge: 'Security' },
-    { id: 'seo-media-optimizer', label: 'SEO Optimizer', icon: Sparkles },
-    { id: 'converter', label: 'Converter Center', icon: RefreshCw },
-    { id: 'ai-document-toolkit', label: 'AI OCR Scan', icon: Cpu, badge: 'AI' },
-    { id: 'batch-automation', label: 'Batch Studio', icon: Workflow }
+    { id: 'dashboard', label: 'Dashboard', path: '/', icon: LayoutDashboard },
+    { id: 'pdf', label: 'PDF Toolbox', path: '/pdf-tools', icon: FileText, badge: 'Popular' },
+    { id: 'image-tools', label: 'Image Suite', path: '/image-tools', icon: ImageIcon },
+    { id: 'universal-compressor', label: 'Compressor', path: '/universal-compressor', icon: Minimize2 },
+    { id: 'ai-secure-vault', label: 'AI Secure Vault', path: '/ai-secure-vault', icon: ShieldCheck, badge: 'Security' },
+    { id: 'seo-media-optimizer', label: 'SEO Optimizer', path: '/seo-media-optimizer', icon: Sparkles },
+    { id: 'converter', label: 'Converter Center', path: '/converter', icon: RefreshCw },
+    { id: 'ai-document-toolkit', label: 'AI OCR Scan', path: '/ai-document-toolkit', icon: Cpu, badge: 'AI' },
+    { id: 'batch-automation', label: 'Batch Studio', path: '/batch-automation', icon: Workflow }
   ];
 
   const filteredNavItems = navItems.filter((item) =>

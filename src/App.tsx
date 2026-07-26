@@ -8,7 +8,7 @@ import ParticleCanvas from './components/ParticleCanvas';
 import { MainLayout } from './layouts/MainLayout';
 import { SEOHead } from './seo/SEOHead';
 import { ToolSEOContent } from './components/common/ToolSEOContent';
-import { TOOLS_REGISTRY } from './constants/toolsData';
+import { TOOLS_REGISTRY, resolveToolByPath } from './constants/toolsData';
 import { saveHistoryFile } from './utils/historyDb';
 import { Loader2 } from 'lucide-react';
 
@@ -30,16 +30,6 @@ const ConverterCenter = lazy(() => import('./views/ConverterCenter'));
 const PdfSecurity = lazy(() => import('./views/PdfSecurity'));
 const PdfEditor = lazy(() => import('./views/PdfEditor'));
 
-const parseHash = () => {
-  const hash = typeof window !== 'undefined' ? window.location.hash.slice(1) : '';
-  if (!hash) return { view: 'dashboard', subTab: null };
-  const parts = hash.split('/');
-  return {
-    view: parts[0] || 'dashboard',
-    subTab: parts[1] || null
-  };
-};
-
 function LoadingFallback() {
   return (
     <div className="min-h-[500px] flex flex-col items-center justify-center p-8 text-center" aria-live="polite" aria-busy="true">
@@ -50,28 +40,56 @@ function LoadingFallback() {
 }
 
 function AppContent() {
-  const [currentView, setCurrentView] = useState(() => parseHash().view);
-  const [currentSubTab, setCurrentSubTab] = useState<string | null>(() => parseHash().subTab);
+  // Initial path resolution from window.location.pathname
+  const getInitialTool = () => {
+    if (typeof window === 'undefined') return 'dashboard';
+    
+    // Check if legacy hash was used, convert to clean path
+    if (window.location.hash) {
+      const legacyHash = window.location.hash.slice(1).split('/')[0];
+      const legacyMap: Record<string, string> = {
+        'dashboard': '/',
+        'pdf': '/pdf-tools',
+        'image-tools': '/image-tools',
+        'resizer': '/image-tools',
+        'compressor': '/image-tools',
+        'universal-compressor': '/universal-compressor',
+        'ai-secure-vault': '/ai-secure-vault',
+        'seo-media-optimizer': '/seo-media-optimizer',
+        'converter': '/converter',
+        'ai-document-toolkit': '/ai-document-toolkit',
+        'batch-automation': '/batch-automation'
+      };
+      const cleanPath = legacyMap[legacyHash] || '/';
+      window.history.replaceState({}, '', cleanPath);
+      return resolveToolByPath(cleanPath).id;
+    }
+
+    return resolveToolByPath(window.location.pathname).id;
+  };
+
+  const [currentView, setCurrentView] = useState<string>(getInitialTool);
+  const [currentSubTab, setCurrentSubTab] = useState<string | null>(null);
   const [history, setHistory] = useLocalStorage<any[]>('convertverse_history', []);
 
-  // Sync hash with currentView and currentSubTab
-  useEffect(() => {
-    const currentHash = window.location.hash.slice(1);
-    const targetHash = currentSubTab ? `${currentView}/${currentSubTab}` : currentView;
-    if (currentHash !== targetHash) {
-      window.location.hash = targetHash;
+  // Handle route navigation with History API
+  const handleNavigateView = (viewId: string) => {
+    const tool = TOOLS_REGISTRY[viewId] || TOOLS_REGISTRY['dashboard'];
+    setCurrentView(tool.id);
+    if (typeof window !== 'undefined' && window.location.pathname !== tool.path) {
+      window.history.pushState({ viewId: tool.id }, '', tool.path);
     }
-  }, [currentView, currentSubTab]);
+  };
 
-  // Handle back/forward browser hash changes
+  // Listen for browser Back/Forward popstate events
   useEffect(() => {
-    const handleHashChange = () => {
-      const { view, subTab } = parseHash();
-      setCurrentView(view);
-      setCurrentSubTab(subTab);
+    const handlePopState = () => {
+      const tool = resolveToolByPath(window.location.pathname);
+      setCurrentView(tool.id);
     };
-    window.addEventListener('hashchange', handleHashChange);
-    return () => window.removeEventListener('hashchange', handleHashChange);
+
+    window.addEventListener('popstate', handlePopState);
+    return () => window.removeEventListener('popstate', handlePopState);
   }, []);
 
   const handleAddHistory = async (item: any, fileBlob?: Blob) => {
@@ -99,13 +117,13 @@ function AppContent() {
   return (
     <>
       <SEOHead currentView={currentView} currentSubTab={currentSubTab} />
-      <MainLayout currentView={currentView} setCurrentView={setCurrentView}>
+      <MainLayout currentView={currentView} setCurrentView={handleNavigateView}>
         <ErrorBoundary>
           <Suspense fallback={<LoadingFallback />}>
             {/* View Switching */}
             {currentView === 'dashboard' && (
               <Dashboard
-                setCurrentView={setCurrentView}
+                setCurrentView={handleNavigateView}
                 setCurrentSubTab={setCurrentSubTab}
                 history={history}
                 setHistory={setHistory}
