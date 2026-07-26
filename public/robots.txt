@@ -8,4 +8,6 @@ Disallow: /temp/
 Disallow: /api/
 Disallow: /*.vault$
 
-Sitemap: https://convert-verse.vercel.app/sitemap.xml
+Crawl-delay: 1
+
+Sitemap: https://convert-verse-8l9l.vercel.app/sitemap.xml

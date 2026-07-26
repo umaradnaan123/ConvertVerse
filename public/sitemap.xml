@@ -5,119 +5,119 @@
         http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
   
   <url>
-    <loc>https://convert-verse.vercel.app/</loc>
+    <loc>https://convert-verse-8l9l.vercel.app/</loc>
     <lastmod>2026-07-26</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
 
   <url>
-    <loc>https://convert-verse.vercel.app/pdf-tools</loc>
+    <loc>https://convert-verse-8l9l.vercel.app/pdf-tools</loc>
     <lastmod>2026-07-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://convert-verse.vercel.app/merge-pdf</loc>
+    <loc>https://convert-verse-8l9l.vercel.app/merge-pdf</loc>
     <lastmod>2026-07-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://convert-verse.vercel.app/split-pdf</loc>
+    <loc>https://convert-verse-8l9l.vercel.app/split-pdf</loc>
     <lastmod>2026-07-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://convert-verse.vercel.app/image-tools</loc>
+    <loc>https://convert-verse-8l9l.vercel.app/image-tools</loc>
     <lastmod>2026-07-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://convert-verse.vercel.app/compress-image</loc>
+    <loc>https://convert-verse-8l9l.vercel.app/compress-image</loc>
     <lastmod>2026-07-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://convert-verse.vercel.app/resize-image</loc>
+    <loc>https://convert-verse-8l9l.vercel.app/resize-image</loc>
     <lastmod>2026-07-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://convert-verse.vercel.app/universal-compressor</loc>
+    <loc>https://convert-verse-8l9l.vercel.app/universal-compressor</loc>
     <lastmod>2026-07-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://convert-verse.vercel.app/ai-secure-vault</loc>
+    <loc>https://convert-verse-8l9l.vercel.app/ai-secure-vault</loc>
     <lastmod>2026-07-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://convert-verse.vercel.app/seo-media-optimizer</loc>
+    <loc>https://convert-verse-8l9l.vercel.app/seo-media-optimizer</loc>
     <lastmod>2026-07-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://convert-verse.vercel.app/converter</loc>
+    <loc>https://convert-verse-8l9l.vercel.app/converter</loc>
     <lastmod>2026-07-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://convert-verse.vercel.app/ai-document-toolkit</loc>
+    <loc>https://convert-verse-8l9l.vercel.app/ai-document-toolkit</loc>
     <lastmod>2026-07-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://convert-verse.vercel.app/batch-automation</loc>
+    <loc>https://convert-verse-8l9l.vercel.app/batch-automation</loc>
     <lastmod>2026-07-26</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://convert-verse.vercel.app/about</loc>
+    <loc>https://convert-verse-8l9l.vercel.app/about</loc>
     <lastmod>2026-07-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
 
   <url>
-    <loc>https://convert-verse.vercel.app/privacy-policy</loc>
+    <loc>https://convert-verse-8l9l.vercel.app/privacy-policy</loc>
     <lastmod>2026-07-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://convert-verse.vercel.app/terms</loc>
+    <loc>https://convert-verse-8l9l.vercel.app/terms</loc>
     <lastmod>2026-07-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>
 
   <url>
-    <loc>https://convert-verse.vercel.app/faq</loc>
+    <loc>https://convert-verse-8l9l.vercel.app/faq</loc>
     <lastmod>2026-07-26</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
