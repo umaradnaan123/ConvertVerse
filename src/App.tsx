@@ -50,15 +50,23 @@ function AppContent() {
       const legacyMap: Record<string, string> = {
         'dashboard': '/',
         'pdf': '/pdf-tools',
+        'merge-pdf': '/merge-pdf',
+        'split-pdf': '/split-pdf',
         'image-tools': '/image-tools',
-        'resizer': '/image-tools',
-        'compressor': '/image-tools',
+        'compress-image': '/compress-image',
+        'resize-image': '/resize-image',
+        'resizer': '/resize-image',
+        'compressor': '/compress-image',
         'universal-compressor': '/universal-compressor',
         'ai-secure-vault': '/ai-secure-vault',
         'seo-media-optimizer': '/seo-media-optimizer',
         'converter': '/converter',
         'ai-document-toolkit': '/ai-document-toolkit',
-        'batch-automation': '/batch-automation'
+        'batch-automation': '/batch-automation',
+        'about': '/about',
+        'privacy-policy': '/privacy-policy',
+        'terms': '/terms',
+        'faq': '/faq'
       };
       const cleanPath = legacyMap[legacyHash] || '/';
       window.history.replaceState({}, '', cleanPath);
@@ -130,18 +138,18 @@ function AppContent() {
               />
             )}
 
-            {currentView === 'pdf' && (
+            {(currentView === 'pdf' || currentView === 'merge-pdf' || currentView === 'split-pdf') && (
               <PdfToolbox
                 onAddHistory={handleAddHistory}
-                activeSubTab={currentSubTab}
+                activeSubTab={currentView === 'merge-pdf' ? 'merge' : currentView === 'split-pdf' ? 'split' : currentSubTab}
                 setActiveSubTab={setCurrentSubTab}
               />
             )}
 
-            {(currentView === 'image-tools' || currentView === 'resizer' || currentView === 'compressor') && (
+            {(currentView === 'image-tools' || currentView === 'resize-image' || currentView === 'compress-image' || currentView === 'resizer' || currentView === 'compressor') && (
               <ImageTools
                 onAddHistory={handleAddHistory}
-                activeSubTab={currentView === 'resizer' ? 'resize' : currentView === 'compressor' ? 'compress' : currentSubTab}
+                activeSubTab={currentView === 'resize-image' || currentView === 'resizer' ? 'resize' : currentView === 'compress-image' || currentView === 'compressor' ? 'compress' : currentSubTab}
                 setActiveSubTab={setCurrentSubTab}
               />
             )}

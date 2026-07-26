@@ -1,7 +1,7 @@
 User-agent: *
 Allow: /
 
-# Private & API routes
+# Disallow private/admin routes
 Disallow: /admin/
 Disallow: /private/
 Disallow: /temp/
