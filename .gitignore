@@ -1,0 +1,60 @@
+# Dependencies
+node_modules/
+
+# Production Build
+dist/
+build/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+logs/
+*.log
+
+# Environment Variables
+.env
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# IDE Files
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Temporary Files
+.cache/
+.temp/
+.tmp/
+tmp/
+temp/
+
+# Vite Files
+.vite/
+
+# Coverage
+coverage/
+
+# Misc
+*.local
+*.zip
+*.rar
+*.7z
+*.mp4
+*.mov
+*.avi
+*.apk
+*.exe
+.vercel/

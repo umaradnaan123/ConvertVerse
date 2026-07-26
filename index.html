@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="canonical" href="https://convert-verse-8l9l-k1jn1ubtw-umaradnaan123s-projects.vercel.app/#dashboard" />
+    <meta name="google-site-verification" content="3HnqK-VdYSw0Gvki7SZizE2J_mdws5GCxxGC8AmkTgA" />
+    <meta name="msvalidate.01" content="09C7A42C92C510395B16F0393F057D6C" />
+    <meta name="yandex-verification" content="5ebbeae4c5c17f4d" />
+    <!-- Self-healing Cache & Version Management -->
+    <script>
+      (function() {
+        // Intercept asset loading errors (e.g. failed chunk imports, deleted files in PWA state)
+        window.addEventListener('error', function(e) {
+          var target = e.target || e.srcElement;
+          var isElementError = target && (target.tagName === 'SCRIPT' || target.tagName === 'LINK');
+          var isChunkError = e.message && (
+            e.message.indexOf('chunk') > -1 || 
+            e.message.indexOf('Loading chunk') > -1 ||
+            e.message.indexOf('Unexpected token') > -1
+          );
+          
+          if (isElementError || isChunkError) {
+            console.warn('[Self-Healing] Script/Chunk loading error detected! Purging CacheStorage and Service Workers to repair...', e);
+            
+            // Unregister all service workers and clean caches
+            if ('serviceWorker' in navigator) {
+              navigator.serviceWorker.getRegistrations().then(function(registrations) {
+                var unregisterPromises = registrations.map(function(reg) {
+                  return reg.unregister();
+                });
+                
+                Promise.all(unregisterPromises).then(function() {
+                  purgeAllCachesAndReload();
+                }).catch(function() {
+                  purgeAllCachesAndReload();
+                });
+              });
+            } else {
+              purgeAllCachesAndReload();
+            }
+          }
+        }, true);
+
+        // Helper to purge CacheStorage and reload the client page
+        function purgeAllCachesAndReload() {
+          if ('caches' in window) {
+            caches.keys().then(function(keys) {
+              var deletePromises = keys.map(function(key) {
+                return caches.delete(key);
+              });
+              Promise.all(deletePromises).then(function() {
+                console.log('[Self-Healing] Cache storage purged. Reloading page...');
+                window.location.reload(true);
+              }).catch(function() {
+                window.location.reload(true);
+              });
+            });
+          } else {
+            window.location.reload(true);
+          }
+        }
+      })();
+    </script>
+    <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="canonical" href="https://umaradnaan123.github.io/ConvertVerse/" />
+    <link rel="manifest" href="./manifest.json" />
+    
+    <!-- Premium SEO Metadata Tags -->
+    <title>ConvertVerse | All-in-One Online Image Resizer & Free PDF Toolbox</title>
+    <meta name="description" content="ConvertVerse is a premium, 100% private, and local browser-based utility suite. Compress images in batches, resize with DPI settings, and split, merge, or visually rearrange PDF page layouts with zero server costs." />
+    <meta name="keywords" content="image compressor online, online image resizer, free pdf compressor, image to pdf, HEIC to JPG, pdf visual page editor, local OCR scan, Word to PDF, AES-256 PDF encryption, metadata scrubber, lighthouse image optimizer, batch rename images" />
+    <!-- Open Graph (Facebook/Social) -->
+    <meta property="og:title" content="ConvertVerse | All-in-One Local File Utilities" />
+    <meta property="og:description" content="Perform batch image compression, physical print resizing, page splits, and local AI-powered OCR conversions completely local inside your browser." />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="ConvertVerse" />
+    <meta property="og:url" content="https://umaradnaan123.github.io/ConvertVerse/" />
+
+    <!-- Google Search Schema Markup JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "WebApplication",
+        "name": "ConvertVerse",
+        "url": "https://umaradnaan123.github.io/ConvertVerse/",
+        "description": "Premium local-first browser utility platform to compress, resize, convert, merge, split, and visually manage PDF documents and image files under 100% user privacy.",
+        "applicationCategory": "UtilityApplication",
+        "operatingSystem": "All",
+        "browserRequirements": "Requires HTML5, Canvas, WebWorkers, and WebAssembly support.",
+        "offers": {
+          "@type": "Offer",
+          "price": "0.00",
+          "priceCurrency": "USD"
+        },
+        "featureList": [
+          "Batch Image Compression Presets",
+          "Physical Print Metric Image Resizer (Inches, Centimeters, Millimeters with DPI scale)",
+          "Interactive PDF Merge with Visual Drag Sorting",
+          "PDF Page Splitting with Range Parser",
+          "Visual PDF Page Rearrange & Rotate Grid Editor",
+          "Local AI OCR (Optical Character Recognition) Image-to-Word Compiler",
+          "Apple HEIC raw to Jpeg decoders",
+          "AES-256 PBKDF2 Local Crypto File Vault",
+          "Canvas-Based EXIF Metadata Scrubber",
+          "Facial Quadrant Privacy Censor Blur",
+          "Timed Self-Destruct Memory Sharing Links",
+          "Lighthouse Page-Speed Core Web Vitals Auditor",
+          "Alt Tag Code Block Generator & Responsive HTML Stacks",
+          "Widescreen 1.91:1 Open Graph Social Card Designer",
+          "Multi-Target Centralized Crop Favicon Package Compiler",
+          "Workflow Pipeline Sequential Batch Constructor"
+        ]
+      }
+    </script>
+  </head>
+  <body>
+    <div id="root">
+      <!-- SEO Semantic HTML5 Content (Pre-rendered for search engine crawlers, replaced by React on load) -->
+      <header style="padding: 40px 20px; max-width: 1200px; margin: 0 auto; font-family: system-ui, -apple-system, sans-serif; text-align: center; border-bottom: 1px solid rgba(229, 231, 235, 0.5);">
+        <h1 style="font-size: 3rem; color: #10b981; margin-bottom: 15px; font-weight: 800; letter-spacing: -0.025em;">ConvertVerse | All-in-One Online Image Resizer & Free PDF Toolbox</h1>
+        <p style="font-size: 1.25rem; color: #4b5563; line-height: 1.6; max-width: 800px; margin: 0 auto;">Your 100% secure, browser-first, and serverless document utility workspace. Manage PDF layouts, compress images in batches, decode Apple HEIC files, and perform Optical Character Recognition (OCR) locally in your browser with absolute privacy.</p>
+      </header>
+
+      <main style="max-width: 1200px; margin: 0 auto; padding: 40px 20px; font-family: system-ui, -apple-system, sans-serif; line-height: 1.75; color: #374151;">
+        
+        <!-- ARTICLE 1: Serverless Local-First Architecture -->
+        <article style="margin-bottom: 50px; border-bottom: 1px solid #e5e7eb; padding-bottom: 40px;">
+          <h2 style="font-size: 2.2rem; color: #0f766e; font-weight: 700; margin-bottom: 15px; letter-spacing: -0.015em;">1. Offline-First Serverless Utility Architecture</h2>
+          <p>Traditional online PDF converters and image compressors force you to upload your sensitive personal files, contracts, scanned receipts, and business documents to remote external servers. This architecture poses substantial security risks, compromises data ownership, and relies heavily on your upload bandwidth.</p>
+          <p><strong>ConvertVerse</strong> introduces a paradigm shift by operating entirely as an <strong>offline-first, browser-only client environment</strong>. Leveraging modern browser technologies such as WebAssembly, HTML5 Canvas, IndexedDB, WebWorkers, and the native Web Crypto API, all operations—including PDF rendering, vector manipulation, cryptographic protection, image decoding, and even AI-powered text scanning—are executed directly on your local device. Your files never leave your computer, ensuring 100% data confidentiality and zero risk of corporate espionage or data breaches.</p>
+        </article>
+
+        <!-- ARTICLE 2: AI Secure Vault & Privacy Shield -->
+        <article style="margin-bottom: 50px; border-bottom: 1px solid #e5e7eb; padding-bottom: 40px;">
+          <h2 style="font-size: 2.2rem; color: #0f766e; font-weight: 700; margin-bottom: 15px; letter-spacing: -0.015em;">2. AI Secure Vault & Privacy Shield</h2>
+          <p>Security is a core value of the ConvertVerse ecosystem. Our specialized **AI Secure Vault & Privacy Shield** implements high-level protection schemes directly in JavaScript:</p>
+          
+          <h3 style="font-size: 1.5rem; color: #1f2937; margin-top: 25px; margin-bottom: 10px;">AES-256 PBKDF2 Local Crypto Vault</h3>
+          <p>Secure files of any format using military-grade client-side encryption. The application uses a custom passphrase key derived via 100,000 PBKDF2 hashing iterations to encrypt raw file buffers inside an AES-GCM 256-bit container. The output is packed with safe salt tokens into a `.vault` file envelope. The entire process takes place locally, meaning nobody else can access the contents without the correct passphrase.</p>
+          
+          <h3 style="font-size: 1.5rem; color: #1f2937; margin-top: 25px; margin-bottom: 10px;">Canvas-Based EXIF Metadata Scrubber</h3>
+          <p>Prevent leaking tracking metadata when sharing photos online. The scrubber scans JPEG and PNG structures and re-renders the media into an isolated HTML5 canvas container. This strips all binary metadata headers, permanently scrubbing camera EXIF tags, GPS coordinates, device information, and creation timestamps.</p>
+          
+          <h3 style="font-size: 1.5rem; color: #1f2937; margin-top: 25px; margin-bottom: 10px;">Facial Quadrant Privacy Censor Blur</h3>
+          <p>Censor face details or sensitive document parts in seconds. Users can apply center facial quadrant box blurs with adjustable pixel intensity parameters to blur center quadrants, generating clean, censored image files instantly.</p>
+
+          <h3 style="font-size: 1.5rem; color: #1f2937; margin-top: 25px; margin-bottom: 10px;">Timed Self-Destruct Memory Sharing Links</h3>
+          <p>Share local files temporarily without writing to physical disk drives. Our memory sharing system generates short-lived browser ObjectURLs bound to custom countdown timers. Once the timer reaches zero, the system triggers a permanent `revokeObjectURL` call, freeing memory and blocking further downloads.</p>
+        </article>
+
+        <!-- ARTICLE 3: Smart AI Website & SEO Media Optimizer -->
+        <article style="margin-bottom: 50px; border-bottom: 1px solid #e5e7eb; padding-bottom: 40px;">
+          <h2 style="font-size: 2.2rem; color: #0f766e; font-weight: 700; margin-bottom: 15px; letter-spacing: -0.015em;">3. Smart AI Website & SEO Media Optimizer</h2>
+          <p>Make your website lightning-fast and search-engine-friendly with our **Smart AI Website & SEO Media Optimizer** module. It includes the following features:</p>
+          
+          <h3 style="font-size: 1.5rem; color: #1f2937; margin-top: 25px; margin-bottom: 10px;">Lighthouse-Style Core Web Vitals Auditor</h3>
+          <p>Get instant insights on image performance. Staging an image automatically triggers an audit calculating a page-speed impact score. The scanner flags oversized legacy formats (PNG/BMP) and warns against large network payloads that trigger LCP penalties, giving advice on how to improve scores.</p>
+          
+          <h3 style="font-size: 1.5rem; color: #1f2937; margin-top: 25px; margin-bottom: 10px;">Automated Alt Tag Suggestion & Lazy-Loaded HTML5 Stacks</h3>
+          <p>Improve accessibility with ease. The metadata analyzer generates contextual alt-text tags from file names and exports ready-to-use HTML `<picture>` code blocks complete with modern WebP sources, mobile-tablet viewport media parameters, and `loading="lazy"` tags.</p>
+          
+          <h3 style="font-size: 1.5rem; color: #1f2937; margin-top: 25px; margin-bottom: 10px;">Widescreen Social Open Graph Card Preview Designer</h3>
+          <p>Design social sharing preview cards on the fly. Users can visually overlay custom page metadata titles and description parameters on cover images to preview and export pixel-perfect 1.91:1 widescreen Open Graph cards for LinkedIn and Facebook.</p>
+
+          <h3 style="font-size: 1.5rem; color: #1f2937; margin-top: 25px; margin-bottom: 10px;">Multi-Target Centralized Crop Favicon Package Compiler</h3>
+          <p>Generate favicon files for all devices instantly. Our engine crops square frames from image centers to output an optimized ZIP containing standard sizes: 16x16.png, 32x32.png, and 180x180.png (Apple Touch Icons).</p>
+        </article>
+
+        <!-- ARTICLE 4: Universal Batch Automation Studio -->
+        <article style="margin-bottom: 50px; border-bottom: 1px solid #e5e7eb; padding-bottom: 40px;">
+          <h2 style="font-size: 2.2rem; color: #0f766e; font-weight: 700; margin-bottom: 15px; letter-spacing: -0.015em;">4. Universal Batch Automation Studio</h2>
+          <p>Speed up repetitive tasks using our **Universal Batch Automation Studio**. It allows users to build local, offline workflows to process hundreds of files at the same time:</p>
+          
+          <h3 style="font-size: 1.5rem; color: #1f2937; margin-top: 25px; margin-bottom: 10px;">Workflow Pipeline Constructor</h3>
+          <p>Chain multiple processing operations in a pipeline. Combine naming schemas, compression filters, and text watermark overlays to automate your image asset editing in a single click.</p>
+          
+          <h3 style="font-size: 1.5rem; color: #1f2937; margin-top: 25px; margin-bottom: 10px;">Action Parameters & Structured Zip Exports</h3>
+          <p>Customize batch parameters to fit your needs. Configure file rename rules using prefix tags and incremental index suffixes, set custom JPEG quality levels, or define custom watermark texts. Staged queues process immediately using your browser's threads, packing all completed assets into a ZIP file with bandwidth-saving summaries.</p>
+        </article>
+
+        <!-- ARTICLE 5: PDF Toolbox & Vector Drawing Suite -->
+        <article style="margin-bottom: 50px; border-bottom: 1px solid #e5e7eb; padding-bottom: 40px;">
+          <h2 style="font-size: 2.2rem; color: #0f766e; font-weight: 700; margin-bottom: 15px; letter-spacing: -0.015em;">5. High-Performance PDF Toolbox & Vector Drawing Suite</h2>
+          <p>Our client-side PDF Suite provides professional tools for managing PDF layouts completely in JavaScript:</p>
+          
+          <h3 style="font-size: 1.5rem; color: #1f2937; margin-top: 25px; margin-bottom: 10px;">Visual PDF Merger & Splitter</h3>
+          <p>Combine several PDF files using drag-sorting grids, or split large documents into target pages using an intelligent range parser (e.g. <code>1, 3, 5-10</code>) completely in local memory.</p>
+          
+          <h3 style="font-size: 1.5rem; color: #1f2937; margin-top: 25px; margin-bottom: 10px;">Vector Page Numbering & Custom Layouts</h3>
+          <p>Write crisp, scale-independent page numbers on your documents. Customize positions (Bottom-Center, Top-Right, etc.), choose layouts like <code>Page N of M</code>, adjust sizes, and pick professional color themes (Dark Grey, Deep Black, Royal Indigo) using native canvas draws.</p>
+        </article>
+
+        <!-- ARTICLE 6: Comprehensive Metric DPI Image Resizer -->
+        <article style="margin-bottom: 50px; border-bottom: 1px solid #e5e7eb; padding-bottom: 40px;">
+          <h2 style="font-size: 2.2rem; color: #0f766e; font-weight: 700; margin-bottom: 15px; letter-spacing: -0.015em;">6. Comprehensive Metric DPI Image Resizer & Format Converter</h2>
+          <p>Prepare images for web displays or print media with our offline image suite:</p>
+          <ul>
+            <li><strong>Batch Compression:</strong> Compress JPEG, PNG, WebP, and GIF images using adjustable parameters while keeping high structural integrity (SSIM).</li>
+            <li><strong>Metric DPI Resizer:</strong> Input physical print dimensions in inches (in), centimeters (cm), or millimeters (mm) alongside target DPI settings (72 to 600 DPI) to scale images with perfect print-to-pixel accuracy.</li>
+            <li><strong>Apple HEIC to JPEG Decoder:</strong> Convert HEIC photos from iOS devices into standard web-friendly JPEGs locally in the browser sandbox.</li>
+          </ul>
+        </article>
+
+        <!-- FEATURE COMPARISON TABLE -->
+        <article style="margin-bottom: 50px; border-bottom: 1px solid #e5e7eb; padding-bottom: 40px;">
+          <h2 style="font-size: 2.2rem; color: #0f766e; font-weight: 700; margin-bottom: 20px; letter-spacing: -0.015em;">SaaS Module Comparison: Local Browser Utilities vs. Traditional Cloud Converters</h2>
+          <div style="overflow-x: auto;">
+            <table style="width: 100%; border-collapse: collapse; text-align: left; font-size: 0.95rem; margin-top: 10px; min-width: 600px;">
+              <thead>
+                <tr style="background-color: #f3f4f6; border-bottom: 2px solid #e5e7eb;">
+                  <th style="padding: 14px; border: 1px solid #e5e7eb; font-weight: 700; color: #374151;">Core Feature</th>
+                  <th style="padding: 14px; border: 1px solid #e5e7eb; font-weight: 700; color: #10b981;">ConvertVerse (Local Browser)</th>
+                  <th style="padding: 14px; border: 1px solid #e5e7eb; font-weight: 700; color: #ef4444;">Standard Online Converters</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td style="padding: 14px; border: 1px solid #e5e7eb; font-weight: bold;">User Data Privacy</td>
+                  <td style="padding: 14px; border: 1px solid #e5e7eb; color: #059669; font-weight: 600; background-color: rgba(16, 185, 129, 0.03);">🔒 100% Private (No uploads, entirely local)</td>
+                  <td style="padding: 14px; border: 1px solid #e5e7eb; color: #dc2626; font-weight: 500; background-color: rgba(239, 68, 68, 0.02);">⚠️ High Risk (Files saved on third-party servers)</td>
+                </tr>
+                <tr style="background-color: #f9fafb;">
+                  <td style="padding: 14px; border: 1px solid #e5e7eb; font-weight: bold;">File Size Restrictions</td>
+                  <td style="padding: 14px; border: 1px solid #e5e7eb; color: #059669; font-weight: 600; background-color: rgba(16, 185, 129, 0.03);">🚀 Unlimited (Limited only by local memory)</td>
+                  <td style="padding: 14px; border: 1px solid #e5e7eb; color: #dc2626; font-weight: 500; background-color: rgba(239, 68, 68, 0.02);">❌ Highly Limited (Caps from 10MB to 50MB)</td>
+                </tr>
+                <tr>
+                  <td style="padding: 14px; border: 1px solid #e5e7eb; font-weight: bold;">Processing Velocity</td>
+                  <td style="padding: 14px; border: 1px solid #e5e7eb; color: #059669; font-weight: 600; background-color: rgba(16, 185, 129, 0.03);">⚡ Instant (Immediate local processing)</td>
+                  <td style="padding: 14px; border: 1px solid #e5e7eb; color: #dc2626; font-weight: 500; background-color: rgba(239, 68, 68, 0.02);">🐢 Slow (Requires network upload & download)</td>
+                </tr>
+                <tr style="background-color: #f9fafb;">
+                  <td style="padding: 14px; border: 1px solid #e5e7eb; font-weight: bold;">Offline Capability</td>
+                  <td style="padding: 14px; border: 1px solid #e5e7eb; color: #059669; font-weight: 600; background-color: rgba(16, 185, 129, 0.03);">✔️ 100% Operational (Works without internet)</td>
+                  <td style="padding: 14px; border: 1px solid #e5e7eb; color: #dc2626; font-weight: 500; background-color: rgba(239, 68, 68, 0.02);">❌ Not Available (Requires active connection)</td>
+                </tr>
+                <tr>
+                  <td style="padding: 14px; border: 1px solid #e5e7eb; font-weight: bold;">Subscription Costs</td>
+                  <td style="padding: 14px; border: 1px solid #e5e7eb; color: #059669; font-weight: 600; background-color: rgba(16, 185, 129, 0.03);">💎 Free (Unlimited, no registration required)</td>
+                  <td style="padding: 14px; border: 1px solid #e5e7eb; color: #dc2626; font-weight: 500; background-color: rgba(239, 68, 68, 0.02);">💸 Costly (Constant premium prompts & limits)</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <!-- SEO FAQS USING ACCESSIBLE DETAILS/SUMMARY -->
+        <article style="margin-bottom: 40px;">
+          <h2 style="font-size: 2.2rem; color: #0f766e; font-weight: 700; margin-bottom: 20px; letter-spacing: -0.015em;">Frequently Asked Questions (FAQ)</h2>
+          
+          <details style="margin-bottom: 16px; border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px; background-color: #f9fafb;" open>
+            <summary style="font-weight: 600; cursor: pointer; color: #111827; font-size: 1.1rem; outline: none;">Is my document secure when using the ConvertVerse PDF compressor?</summary>
+            <p style="margin-top: 10px; color: #4b5563; line-height: 1.6;">Yes! Since your files are processed exclusively inside your browser's local sandbox, your documents are never uploaded, stored, or viewed by any remote server. Your confidential files remain strictly on your physical machine.</p>
+          </details>
+
+          <details style="margin-bottom: 16px; border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px; background-color: #f9fafb;">
+            <summary style="font-weight: 600; cursor: pointer; color: #111827; font-size: 1.1rem; outline: none;">How does the physical metric (in/cm/mm) resizer work?</summary>
+            <p style="margin-top: 10px; color: #4b5563; line-height: 1.6;">Traditional resizers only allow altering pixel dimensions. Our advanced metric resizer uses your custom DPI (dots per inch) setting to mathematically translate physical print sizes (inches, centimeters, millimeters) into exact pixel sizes, ensuring print products remain pin-sharp.</p>
+          </details>
+
+          <details style="margin-bottom: 16px; border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px; background-color: #f9fafb;">
+            <summary style="font-weight: 600; cursor: pointer; color: #111827; font-size: 1.1rem; outline: none;">Can I split, merge, or rearrange encrypted PDF files?</summary>
+            <p style="margin-top: 10px; color: #4b5563; line-height: 1.6;">Yes, as long as you possess the security key. The local application runs standard decryption algorithms natively in your browser sandbox, requesting the key locally to split or combine the file elements securely.</p>
+          </details>
+
+          <details style="margin-bottom: 16px; border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px; background-color: #f9fafb;">
+            <summary style="font-weight: 600; cursor: pointer; color: #111827; font-size: 1.1rem; outline: none;">Do I need to pay or register for an account to compress images in batches?</summary>
+            <p style="margin-top: 10px; color: #4b5563; line-height: 1.6;">No. ConvertVerse is a completely free, utility platform. Since the client-side processing consumes your local CPU resources instead of remote servers, we do not require subscription fees, daily limits, or registrations.</p>
+          </details>
+          
+          <details style="margin-bottom: 16px; border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px; background-color: #f9fafb;">
+            <summary style="font-weight: 600; cursor: pointer; color: #111827; font-size: 1.1rem; outline: none;">How do the timed self-destruct temporary sharing links protect my files?</summary>
+            <p style="margin-top: 10px; color: #4b5563; line-height: 1.6;">When a file is staged for temporary sharing, ConvertVerse creates a local browser ObjectURL in memory. Once the countdown expires, a garbage-collection hook immediately revokes the URL, permanently erasing it from the browser's RAM. The file cannot be restored or accessed again.</p>
+          </details>
+        </article>
+      </main>
+
+      <footer style="text-align: center; color: #9ca3af; font-size: 0.9rem; padding: 40px 20px; border-top: 1px solid #e5e7eb; font-family: system-ui, -apple-system, sans-serif;">
+        <p>&copy; 2026 ConvertVerse. All rights reserved. 100% Serverless. Built with pure browser privacy.</p>
+    <a href="https://www.effectivecpmnetwork.com/y64k0hg8e?key=b6e031570e1ac4dcce264194b1bf0101" target="_blank" rel="noopener noreferrer" class="inline-block bg-purple-600 text-white px-4 py-2 rounded hover:bg-purple-700 transition mt-2">Check out our special offer</a>
+      </footer>
+    </div>
+    <script type="module" src="./src/main.tsx"></script>
+  </body>
+</html>

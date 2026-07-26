@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Redirecting to ConvertVerse...</title>
+    <script type="text/javascript">
+      // GitHub Pages SPA Redirector for Hash-based routing.
+      // Dynamically extracts any path-based sub-route and translates it
+      // into the equivalent Hash-Route prefix so the SPA mounts correctly.
+      (function() {
+        var baseSegment = 'ConvertVerse';
+        var loc = window.location;
+        var path = loc.pathname;
+        var hash = loc.hash;
+        
+        var baseIndex = path.indexOf('/' + baseSegment);
+        var hasBase = baseIndex !== -1;
+        var subPath = '';
+        if (hasBase) {
+          subPath = path.substring(baseIndex + baseSegment.length + 2);
+        } else {
+          subPath = path.substring(1);
+        }
+        
+        if (subPath.endsWith('/')) {
+          subPath = subPath.substring(0, subPath.length - 1);
+        }
+        
+        var targetHash = hash || (subPath ? '#' + subPath : '');
+        
+        // Construct target path: include base segment only if originally present
+        var pathPrefix = hasBase ? '/' + baseSegment + '/' : '/';
+        var redirectUrl = loc.protocol + '//' + loc.hostname + (loc.port ? ':' + loc.port : '') + pathPrefix + targetHash;
+        loc.replace(redirectUrl);
+      })();
+    </script>
+  </head>
+  <body>
+    <p>Redirecting to ConvertVerse...</p>
+  </body>
+</html>
