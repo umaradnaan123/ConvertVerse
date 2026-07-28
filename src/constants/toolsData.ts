@@ -17,7 +17,7 @@ export interface ToolMetaData {
   longContent: string;
 }
 
-export const BASE_URL = 'https://convert-verse-8l9l.vercel.app';
+export const BASE_URL = 'https://convert-verse-8l9l-k1jn1ubtw-umaradnaan123s-projects.vercel.app';
 
 export const TOOLS_REGISTRY: Record<string, ToolMetaData> = {
   'dashboard': {
