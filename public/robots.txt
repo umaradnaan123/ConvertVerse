@@ -1,9 +1,12 @@
 User-agent: *
 Allow: /
-Disallow: /api/
+
+# Disallow private/admin routes
 Disallow: /admin/
-Disallow: /_next/
 Disallow: /private/
+Disallow: /temp/
+Disallow: /api/
+Disallow: /*.vault$
 
 Crawl-delay: 1
 
