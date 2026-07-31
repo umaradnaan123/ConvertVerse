@@ -1,7 +1,6 @@
 User-agent: *
 Allow: /
 
-# Disallow private/admin routes
 Disallow: /admin/
 Disallow: /private/
 Disallow: /temp/
@@ -11,3 +10,4 @@ Disallow: /*.vault$
 Crawl-delay: 1
 
 Sitemap: https://convert-verse-8l9l.vercel.app/sitemap.xml
+Host: https://convert-verse-8l9l.vercel.app

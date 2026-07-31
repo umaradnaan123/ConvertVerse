@@ -104,7 +104,7 @@ export const TOOLS_REGISTRY: Record<string, ToolMetaData> = {
     features: ['Vector Stream Optimization', 'Lossless Text Compression', 'Instant Size Savings'],
     benefits: ['Prepare heavy documents under email limits.'],
     instructions: ['Upload PDF.', 'Select compression level.', 'Download shrunken PDF.'],
-    faqs: [{ question: 'Is text readable after compression?', answer: 'Yes, vector fonts remain crisp.' }],
+    faqs: [{ question: 'Is text readable after compression?', answer: 'Yes, vector fonts remain sharp.' }],
     longContent: 'Optimizes PDF buffer sizes natively inside browser RAM.'
   },
   'pdf-to-word': {
@@ -139,7 +139,7 @@ export const TOOLS_REGISTRY: Record<string, ToolMetaData> = {
     benefits: ['Lock formatting by saving documents as PDF.'],
     instructions: ['Upload Word file.', 'Click Convert to PDF.', 'Download PDF.'],
     faqs: [{ question: 'Can I convert text files to PDF?', answer: 'Yes, TXT and DOCX files are supported.' }],
-    longContent: `Compile documents into clean vector PDF files.`
+    longContent: 'Compile documents into clean vector PDF files.'
   },
   'image-tools': {
     id: 'image-tools',
@@ -157,6 +157,23 @@ export const TOOLS_REGISTRY: Record<string, ToolMetaData> = {
     instructions: ['Upload images.', 'Choose operation.', 'Download processed files.'],
     faqs: [{ question: 'How does metric resizer work?', answer: 'Translates physical inches/cm to pixels via DPI.' }],
     longContent: 'Complete client-side graphic asset manipulation.'
+  },
+  'image-compressor': {
+    id: 'image-compressor',
+    name: 'Image Compressor Workstation',
+    category: 'image',
+    shortDescription: 'Shrink JPEG, PNG, WebP, and AVIF photo weights up to 80% locally.',
+    seoTitle: 'Image Compressor Online - Reduce Photo File Size Free',
+    seoDescription: 'Batch compress JPG, PNG, and WebP images locally inside browser memory. Save bandwidth and improve page speeds.',
+    keywords: ['image compressor', 'shrink photo size', 'reduce image MB to KB'],
+    path: '/image-compressor',
+    canonicalUrl: `${BASE_URL}/image-compressor`,
+    iconName: 'Image',
+    features: ['Lossless & Lossy Sliders', 'Batch Processing', 'SSIM Comparison'],
+    benefits: ['Reduce loading times to pass Lighthouse audits.'],
+    instructions: ['Upload photos.', 'Adjust compression.', 'Download.'],
+    faqs: [{ question: 'Is quality preserved?', answer: 'Yes, adaptive compression preserves visual detail.' }],
+    longContent: 'Optimize image weights for fast page load performance.'
   },
   'image-converter': {
     id: 'image-converter',

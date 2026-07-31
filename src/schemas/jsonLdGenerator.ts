@@ -55,6 +55,46 @@ export function generateWebSiteSchema(baseUrl: string) {
   };
 }
 
+export function generateSiteNavigationSchema(baseUrl: string) {
+  const items = [
+    { name: 'PDF Tools', url: `${baseUrl}/pdf-tools` },
+    { name: 'Image Tools', url: `${baseUrl}/image-tools` },
+    { name: 'Image Converter', url: `${baseUrl}/image-converter` },
+    { name: 'Merge PDF', url: `${baseUrl}/pdf-merge` },
+    { name: 'Compress PDF', url: `${baseUrl}/pdf-compress` },
+    { name: 'Tools Directory', url: `${baseUrl}/tools` },
+    { name: 'Categories', url: `${baseUrl}/categories` },
+    { name: 'Technical Blog', url: `${baseUrl}/blog` },
+    { name: 'About ConvertVerse', url: `${baseUrl}/about` },
+    { name: 'Contact Support', url: `${baseUrl}/contact` }
+  ];
+
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    'itemListElement': items.map((item, idx) => ({
+      '@type': 'SiteNavigationElement',
+      'position': idx + 1,
+      'name': item.name,
+      'url': item.url
+    }))
+  };
+}
+
+export function generateCollectionPageSchema(baseUrl: string, name: string, description: string, url: string) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'CollectionPage',
+    '@id': `${url}/#collection`,
+    'name': name,
+    'description': description,
+    'url': url,
+    'publisher': {
+      '@id': `${baseUrl}/#organization`
+    }
+  };
+}
+
 export function generateWebApplicationSchema(config: SchemaConfig) {
   return {
     '@context': 'https://schema.org',

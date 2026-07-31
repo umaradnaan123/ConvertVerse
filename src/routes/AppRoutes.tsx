@@ -59,19 +59,29 @@ export function AppRoutes({ history, setHistory, onAddHistory }: AppRoutesProps)
         <Route path="/pdf-tools" element={<PdfToolbox onAddHistory={onAddHistory} activeSubTab={null} setActiveSubTab={() => {}} />} />
         <Route path="/pdf-tools/merge-pdf" element={<PdfToolbox onAddHistory={onAddHistory} activeSubTab="merge" setActiveSubTab={() => {}} />} />
         <Route path="/pdf-merge" element={<PdfToolbox onAddHistory={onAddHistory} activeSubTab="merge" setActiveSubTab={() => {}} />} />
+        <Route path="/merge-pdf" element={<PdfToolbox onAddHistory={onAddHistory} activeSubTab="merge" setActiveSubTab={() => {}} />} />
         <Route path="/pdf-tools/split-pdf" element={<PdfToolbox onAddHistory={onAddHistory} activeSubTab="split" setActiveSubTab={() => {}} />} />
         <Route path="/pdf-split" element={<PdfToolbox onAddHistory={onAddHistory} activeSubTab="split" setActiveSubTab={() => {}} />} />
+        <Route path="/split-pdf" element={<PdfToolbox onAddHistory={onAddHistory} activeSubTab="split" setActiveSubTab={() => {}} />} />
         <Route path="/pdf-tools/compress-pdf" element={<PdfToolbox onAddHistory={onAddHistory} activeSubTab="compress" setActiveSubTab={() => {}} />} />
         <Route path="/pdf-compress" element={<PdfToolbox onAddHistory={onAddHistory} activeSubTab="compress" setActiveSubTab={() => {}} />} />
+        <Route path="/pdf-compressor" element={<PdfToolbox onAddHistory={onAddHistory} activeSubTab="compress" setActiveSubTab={() => {}} />} />
         <Route path="/pdf-to-word" element={<PdfToolbox onAddHistory={onAddHistory} activeSubTab="compress" setActiveSubTab={() => {}} />} />
         <Route path="/word-to-pdf" element={<PdfToolbox onAddHistory={onAddHistory} activeSubTab="merge" setActiveSubTab={() => {}} />} />
+        <Route path="/watermark-pdf" element={<BatchAutomationStudio />} />
+        <Route path="/unlock-pdf" element={<PdfSecurity onAddHistory={onAddHistory} activeSubTab={null} setActiveSubTab={() => {}} />} />
+        <Route path="/protect-pdf" element={<PdfSecurity onAddHistory={onAddHistory} activeSubTab={null} setActiveSubTab={() => {}} />} />
         <Route path="/pdf-editor" element={<PdfEditor onAddHistory={onAddHistory} activeSubTab={null} setActiveSubTab={() => {}} />} />
+        <Route path="/rotate-image" element={<PdfEditor onAddHistory={onAddHistory} activeSubTab={null} setActiveSubTab={() => {}} />} />
         <Route path="/pdf-security" element={<PdfSecurity onAddHistory={onAddHistory} activeSubTab={null} setActiveSubTab={() => {}} />} />
 
-        {/* Image Suite Dedicated Routes */}
+        {/* Image Suite Dedicated & Direct Alias Routes */}
         <Route path="/image-tools" element={<ImageTools onAddHistory={onAddHistory} activeSubTab={null} setActiveSubTab={() => {}} />} />
         <Route path="/image-tools/resize-image" element={<ImageTools onAddHistory={onAddHistory} activeSubTab="resize" setActiveSubTab={() => {}} />} />
+        <Route path="/resize-image" element={<ImageTools onAddHistory={onAddHistory} activeSubTab="resize" setActiveSubTab={() => {}} />} />
+        <Route path="/crop-image" element={<ImageTools onAddHistory={onAddHistory} activeSubTab="resize" setActiveSubTab={() => {}} />} />
         <Route path="/image-tools/compress-image" element={<ImageTools onAddHistory={onAddHistory} activeSubTab="compress" setActiveSubTab={() => {}} />} />
+        <Route path="/image-compressor" element={<ImageTools onAddHistory={onAddHistory} activeSubTab="compress" setActiveSubTab={() => {}} />} />
         <Route path="/image-tools/remove-background" element={<ImageTools onAddHistory={onAddHistory} activeSubTab="scrub" setActiveSubTab={() => {}} />} />
 
         {/* Converter Dedicated Routes */}
@@ -102,11 +112,13 @@ export function AppRoutes({ history, setHistory, onAddHistory }: AppRoutesProps)
         <Route path="/blog" element={<BlogView />} />
         <Route path="/blog/:articleId" element={<BlogArticleView />} />
         <Route path="/help" element={<HelpView />} />
+        <Route path="/faq" element={<Navigate to="/help" replace />} />
         <Route path="/about" element={<AboutView />} />
         <Route path="/contact" element={<ContactView />} />
         <Route path="/disclaimer" element={<DisclaimerView />} />
         <Route path="/authors" element={<AuthorsView />} />
         <Route path="/privacy-policy" element={<PrivacyPolicyView />} />
+        <Route path="/privacy" element={<Navigate to="/privacy-policy" replace />} />
         <Route path="/terms" element={<TermsView />} />
 
         {/* Legacy Hash Fallbacks */}
