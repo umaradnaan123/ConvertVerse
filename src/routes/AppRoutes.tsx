@@ -24,6 +24,9 @@ const PrivacyPolicyView = lazy(() => import('../views/PrivacyPolicyView'));
 const TermsView = lazy(() => import('../views/TermsView'));
 const HelpView = lazy(() => import('../views/HelpView'));
 const BlogView = lazy(() => import('../views/BlogView'));
+const BlogArticleView = lazy(() => import('../views/BlogArticleView'));
+const DisclaimerView = lazy(() => import('../views/DisclaimerView'));
+const AuthorsView = lazy(() => import('../views/AuthorsView'));
 const ToolsDirectoryView = lazy(() => import('../views/ToolsDirectoryView'));
 const CategoriesView = lazy(() => import('../views/CategoriesView'));
 const SearchView = lazy(() => import('../views/SearchView'));
@@ -52,11 +55,16 @@ export function AppRoutes({ history, setHistory, onAddHistory }: AppRoutesProps)
         <Route path="/" element={<Dashboard setCurrentView={() => {}} setCurrentSubTab={() => {}} history={history} setHistory={setHistory} />} />
         <Route path="/dashboard" element={<Dashboard setCurrentView={() => {}} setCurrentSubTab={() => {}} history={history} setHistory={setHistory} />} />
 
-        {/* PDF Suite Dedicated Routes */}
+        {/* PDF Suite Dedicated & Direct Alias Routes */}
         <Route path="/pdf-tools" element={<PdfToolbox onAddHistory={onAddHistory} activeSubTab={null} setActiveSubTab={() => {}} />} />
         <Route path="/pdf-tools/merge-pdf" element={<PdfToolbox onAddHistory={onAddHistory} activeSubTab="merge" setActiveSubTab={() => {}} />} />
+        <Route path="/pdf-merge" element={<PdfToolbox onAddHistory={onAddHistory} activeSubTab="merge" setActiveSubTab={() => {}} />} />
         <Route path="/pdf-tools/split-pdf" element={<PdfToolbox onAddHistory={onAddHistory} activeSubTab="split" setActiveSubTab={() => {}} />} />
+        <Route path="/pdf-split" element={<PdfToolbox onAddHistory={onAddHistory} activeSubTab="split" setActiveSubTab={() => {}} />} />
         <Route path="/pdf-tools/compress-pdf" element={<PdfToolbox onAddHistory={onAddHistory} activeSubTab="compress" setActiveSubTab={() => {}} />} />
+        <Route path="/pdf-compress" element={<PdfToolbox onAddHistory={onAddHistory} activeSubTab="compress" setActiveSubTab={() => {}} />} />
+        <Route path="/pdf-to-word" element={<PdfToolbox onAddHistory={onAddHistory} activeSubTab="compress" setActiveSubTab={() => {}} />} />
+        <Route path="/word-to-pdf" element={<PdfToolbox onAddHistory={onAddHistory} activeSubTab="merge" setActiveSubTab={() => {}} />} />
         <Route path="/pdf-editor" element={<PdfEditor onAddHistory={onAddHistory} activeSubTab={null} setActiveSubTab={() => {}} />} />
         <Route path="/pdf-security" element={<PdfSecurity onAddHistory={onAddHistory} activeSubTab={null} setActiveSubTab={() => {}} />} />
 
@@ -70,7 +78,10 @@ export function AppRoutes({ history, setHistory, onAddHistory }: AppRoutesProps)
         <Route path="/image-converter" element={<ConverterCenter onAddHistory={onAddHistory} activeSubTab={null} setActiveSubTab={() => {}} />} />
         <Route path="/converter" element={<ConverterCenter onAddHistory={onAddHistory} activeSubTab={null} setActiveSubTab={() => {}} />} />
         <Route path="/converters/png-to-jpg" element={<ConverterCenter onAddHistory={onAddHistory} activeSubTab="jpg" setActiveSubTab={() => {}} />} />
+        <Route path="/png-to-jpg" element={<ConverterCenter onAddHistory={onAddHistory} activeSubTab="jpg" setActiveSubTab={() => {}} />} />
+        <Route path="/jpg-to-png" element={<ConverterCenter onAddHistory={onAddHistory} activeSubTab="png" setActiveSubTab={() => {}} />} />
         <Route path="/converters/webp-to-png" element={<ConverterCenter onAddHistory={onAddHistory} activeSubTab="png" setActiveSubTab={() => {}} />} />
+        <Route path="/webp-to-png" element={<ConverterCenter onAddHistory={onAddHistory} activeSubTab="png" setActiveSubTab={() => {}} />} />
         <Route path="/universal-compressor" element={<UniversalCompressor onAddHistory={onAddHistory} />} />
 
         {/* Advanced Tool Modules */}
@@ -84,14 +95,17 @@ export function AppRoutes({ history, setHistory, onAddHistory }: AppRoutesProps)
         <Route path="/batch-tools" element={<BatchAutomationStudio />} />
         <Route path="/batch-automation" element={<BatchAutomationStudio />} />
 
-        {/* Directory & Search Routes */}
+        {/* Directory & EEAT Routes */}
         <Route path="/tools" element={<ToolsDirectoryView />} />
         <Route path="/categories" element={<CategoriesView />} />
         <Route path="/search" element={<SearchView />} />
         <Route path="/blog" element={<BlogView />} />
+        <Route path="/blog/:articleId" element={<BlogArticleView />} />
         <Route path="/help" element={<HelpView />} />
         <Route path="/about" element={<AboutView />} />
         <Route path="/contact" element={<ContactView />} />
+        <Route path="/disclaimer" element={<DisclaimerView />} />
+        <Route path="/authors" element={<AuthorsView />} />
         <Route path="/privacy-policy" element={<PrivacyPolicyView />} />
         <Route path="/terms" element={<TermsView />} />
 

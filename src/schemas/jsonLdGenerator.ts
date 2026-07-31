@@ -123,3 +123,40 @@ export function generateHowToSchema(config: SchemaConfig) {
     }))
   };
 }
+
+export function generateArticleSchema(baseUrl: string, article: { id: string; title: string; snippet: string; date: string; authorName: string }) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Article',
+    'headline': article.title,
+    'description': article.snippet,
+    'url': `${baseUrl}/blog/${article.id}`,
+    'datePublished': article.date,
+    'dateModified': article.date,
+    'mainEntityOfPage': {
+      '@type': 'WebPage',
+      '@id': `${baseUrl}/blog/${article.id}`
+    },
+    'author': {
+      '@type': 'Person',
+      'name': article.authorName,
+      'url': `${baseUrl}/authors`
+    },
+    'publisher': {
+      '@id': `${baseUrl}/#organization`
+    }
+  };
+}
+
+export function generatePersonSchema(baseUrl: string, author: { name: string; role: string; bio: string }) {
+  return {
+    '@context': 'https://schema.org',
+    '@type': 'Person',
+    'name': author.name,
+    'jobTitle': author.role,
+    'description': author.bio,
+    'worksFor': {
+      '@id': `${baseUrl}/#organization`
+    }
+  };
+}
