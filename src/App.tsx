@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { BrowserRouter } from 'react-router-dom';
+import React, { useState, useEffect } from 'react';
+import { BrowserRouter, useLocation } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
 import { LanguageProvider } from './hooks/useLanguage';
@@ -12,6 +12,7 @@ import { MainLayout } from './layouts/MainLayout';
 import { HelmetSEOManager } from './seo/HelmetSEOManager';
 import { AppRoutes } from './routes/AppRoutes';
 import { saveHistoryFile } from './utils/historyDb';
+import { initGA, trackPageView } from './analytics/googleAnalytics';
 
 const queryClient = new QueryClient({
   defaultOptions: {
@@ -24,6 +25,15 @@ const queryClient = new QueryClient({
 
 function AppContent() {
   const [history, setHistory] = useLocalStorage<any[]>('convertverse_history', []);
+  const location = useLocation();
+
+  useEffect(() => {
+    initGA();
+  }, []);
+
+  useEffect(() => {
+    trackPageView(location.pathname);
+  }, [location.pathname]);
 
   const handleAddHistory = async (item: any, fileBlob?: Blob) => {
     if (!item) return;
