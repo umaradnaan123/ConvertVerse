@@ -8,6 +8,8 @@ const PdfToolbox = lazy(() => import('../views/PdfToolbox'));
 const ImageTools = lazy(() => import('../views/ImageTools'));
 const UniversalCompressor = lazy(() => import('../views/UniversalCompressor'));
 const ConverterCenter = lazy(() => import('../views/ConverterCenter'));
+const ConvertersLandingView = lazy(() => import('../views/ConvertersLandingView'));
+const UnitConvertersView = lazy(() => import('../views/UnitConvertersView'));
 const PdfEditor = lazy(() => import('../views/PdfEditor'));
 const PdfSecurity = lazy(() => import('../views/PdfSecurity'));
 const FileRepairRecoveryCenter = lazy(() => import('../views/FileRepairRecoveryCenter'));
@@ -54,6 +56,20 @@ export function AppRoutes({ history, setHistory, onAddHistory }: AppRoutesProps)
         {/* Core Dashboard Workstation */}
         <Route path="/" element={<Dashboard setCurrentView={() => {}} setCurrentSubTab={() => {}} history={history} setHistory={setHistory} />} />
         <Route path="/dashboard" element={<Dashboard setCurrentView={() => {}} setCurrentSubTab={() => {}} history={history} setHistory={setHistory} />} />
+
+        {/* Converters Directory & Unit Category Routes */}
+        <Route path="/converters" element={<ConvertersLandingView />} />
+        <Route path="/converters/length" element={<UnitConvertersView />} />
+        <Route path="/converters/weight" element={<UnitConvertersView />} />
+        <Route path="/converters/temperature" element={<UnitConvertersView />} />
+        <Route path="/converters/area" element={<UnitConvertersView />} />
+        <Route path="/converters/volume" element={<UnitConvertersView />} />
+        <Route path="/converters/time" element={<UnitConvertersView />} />
+        <Route path="/converters/speed" element={<UnitConvertersView />} />
+        <Route path="/converters/data" element={<UnitConvertersView />} />
+        <Route path="/converters/energy" element={<UnitConvertersView />} />
+        <Route path="/converters/pressure" element={<UnitConvertersView />} />
+        <Route path="/converters/:category" element={<UnitConvertersView />} />
 
         {/* PDF Suite Dedicated & Direct Alias Routes */}
         <Route path="/pdf-tools" element={<PdfToolbox onAddHistory={onAddHistory} activeSubTab={null} setActiveSubTab={() => {}} />} />

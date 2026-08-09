@@ -11,6 +11,7 @@ const currentDate = new Date().toISOString().split('T')[0];
 const pageRoutes = [
   { path: '/', priority: '1.0', changefreq: 'daily', title: 'ConvertVerse Workstation' },
   { path: '/dashboard', priority: '1.0', changefreq: 'daily', title: 'Workstation Dashboard' },
+  { path: '/converters', priority: '0.9', changefreq: 'weekly', title: 'Online Unit Converters Directory' },
   { path: '/tools', priority: '0.7', changefreq: 'monthly', title: 'All Tools Directory' },
   { path: '/categories', priority: '0.7', changefreq: 'monthly', title: 'Tool Categories Index' },
   { path: '/search', priority: '0.7', changefreq: 'monthly', title: 'Tool Search Workstation' },
@@ -29,6 +30,16 @@ const pageRoutes = [
 ];
 
 const toolRoutes = [
+  { path: '/converters/length', priority: '0.9', changefreq: 'weekly', title: 'Length Converter' },
+  { path: '/converters/weight', priority: '0.9', changefreq: 'weekly', title: 'Weight & Mass Converter' },
+  { path: '/converters/temperature', priority: '0.9', changefreq: 'weekly', title: 'Temperature Converter' },
+  { path: '/converters/area', priority: '0.9', changefreq: 'weekly', title: 'Area Converter' },
+  { path: '/converters/volume', priority: '0.9', changefreq: 'weekly', title: 'Volume Converter' },
+  { path: '/converters/time', priority: '0.9', changefreq: 'weekly', title: 'Time Converter' },
+  { path: '/converters/speed', priority: '0.9', changefreq: 'weekly', title: 'Speed Converter' },
+  { path: '/converters/data', priority: '0.9', changefreq: 'weekly', title: 'Data Storage Converter' },
+  { path: '/converters/energy', priority: '0.9', changefreq: 'weekly', title: 'Energy Converter' },
+  { path: '/converters/pressure', priority: '0.9', changefreq: 'weekly', title: 'Pressure Converter' },
   { path: '/pdf-tools', priority: '0.9', changefreq: 'weekly', title: 'PDF Tools Suite' },
   { path: '/pdf-tools/merge-pdf', priority: '0.9', changefreq: 'weekly', title: 'Merge PDF Online' },
   { path: '/pdf-merge', priority: '0.9', changefreq: 'weekly', title: 'Merge PDF Online' },
