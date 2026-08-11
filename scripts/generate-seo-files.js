@@ -10,11 +10,9 @@ const currentDate = new Date().toISOString().split('T')[0];
 
 const pageRoutes = [
   { path: '/', priority: '1.0', changefreq: 'daily', title: 'ConvertVerse Workstation' },
-  { path: '/dashboard', priority: '1.0', changefreq: 'daily', title: 'Workstation Dashboard' },
   { path: '/converters', priority: '0.9', changefreq: 'weekly', title: 'Online Unit Converters Directory' },
   { path: '/tools', priority: '0.7', changefreq: 'monthly', title: 'All Tools Directory' },
   { path: '/categories', priority: '0.7', changefreq: 'monthly', title: 'Tool Categories Index' },
-  { path: '/search', priority: '0.7', changefreq: 'monthly', title: 'Tool Search Workstation' },
   { path: '/blog', priority: '0.7', changefreq: 'monthly', title: 'Technical Blog & Guides' },
   { path: '/blog/how-to-merge-pdf', priority: '0.8', changefreq: 'monthly', title: 'How to Merge PDF Files Online Free' },
   { path: '/blog/how-to-compress-pdf', priority: '0.8', changefreq: 'monthly', title: 'How to Compress PDF Files for Email' },

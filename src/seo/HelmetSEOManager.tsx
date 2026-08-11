@@ -23,12 +23,22 @@ export function HelmetSEOManager({ toolId, pathOverride, titleOverride, descript
 
   const pageTitle = titleOverride || tool.seoTitle || 'ConvertVerse | All-in-One Private File Workstation';
   const pageDescription = descriptionOverride || tool.seoDescription || '100% serverless online PDF & image converter hub operating locally in your browser sandbox.';
-  const canonicalUrl = `${BASE_URL}${tool.path === '/' ? '' : tool.path}`;
+  
+  // 100% Self-Referencing Canonical URL Alignment
+  const canonicalUrl = `${BASE_URL}${currentPath === '/' ? '' : currentPath}`;
   const ogImageUrl = `${BASE_URL}/og-preview.png`;
+
+  // Robots logic: noindex private dashboard and dynamic search queries
+  let robotsDirective = "index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1";
+  if (currentPath === '/dashboard') {
+    robotsDirective = "noindex, nofollow";
+  } else if (currentPath === '/search') {
+    robotsDirective = "noindex, follow";
+  }
 
   const breadcrumbs = [
     { name: 'Home', item: '/' },
-    ...(tool.path !== '/' ? [{ name: tool.name, item: tool.path }] : [])
+    ...(currentPath !== '/' ? [{ name: tool.name, item: currentPath }] : [])
   ];
 
   const orgSchema = generateOrganizationSchema(BASE_URL);
@@ -38,7 +48,7 @@ export function HelmetSEOManager({ toolId, pathOverride, titleOverride, descript
     name: tool.name,
     description: pageDescription,
     canonicalUrl,
-    path: tool.path,
+    path: currentPath,
     instructions: tool.instructions
   });
   const breadcrumbSchema = generateBreadcrumbSchema(BASE_URL, breadcrumbs);
@@ -48,7 +58,7 @@ export function HelmetSEOManager({ toolId, pathOverride, titleOverride, descript
     name: tool.name,
     description: pageDescription,
     canonicalUrl,
-    path: tool.path,
+    path: currentPath,
     instructions: tool.instructions
   });
 
@@ -64,11 +74,11 @@ export function HelmetSEOManager({ toolId, pathOverride, titleOverride, descript
       <meta name="keywords" content={tool.keywords ? tool.keywords.join(', ') : 'pdf converter, image resizer, file utility'} />
       <meta name="author" content="ConvertVerse" />
       <meta name="application-name" content="ConvertVerse Workstation" />
-      <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+      <meta name="robots" content={robotsDirective} />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       <meta name="theme-color" content="#0f172a" />
 
-      {/* Canonical Link */}
+      {/* 100% Self-Referencing Canonical Link */}
       <link rel="canonical" href={canonicalUrl} />
 
       {/* Open Graph / Facebook / LinkedIn */}

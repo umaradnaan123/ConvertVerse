@@ -158,12 +158,63 @@ export const TOOLS_REGISTRY: Record<string, ToolMetaData> = {
     faqs: [{ question: 'How does metric resizer work?', answer: 'Translates physical inches/cm to pixels via DPI.' }],
     longContent: 'Complete client-side graphic asset manipulation.'
   },
+  'image-tools-resize': {
+    id: 'image-tools-resize',
+    name: 'Resize Image Workstation',
+    category: 'image',
+    shortDescription: 'Resize image dimensions in pixels or physical print units with metric DPI controls.',
+    seoTitle: 'Resize Image Online - Metric DPI Image Resizer | ConvertVerse',
+    seoDescription: 'Resize JPEG, PNG, and WebP images by exact pixel dimensions or physical print metric units (inches, cm, mm) with custom DPI controls.',
+    keywords: ['resize image', 'image resizer online', 'change image dimensions'],
+    path: '/image-tools/resize-image',
+    canonicalUrl: `${BASE_URL}/image-tools/resize-image`,
+    iconName: 'Image',
+    features: ['Pixel & Metric DPI Resizing', 'Aspect Ratio Lock', 'Batch Image Resizing'],
+    benefits: ['Prepare images for social media covers, banners, or physical printing.'],
+    instructions: ['Upload image file.', 'Set width, height, or DPI.', 'Download resized image.'],
+    faqs: [{ question: 'Can I lock aspect ratio?', answer: 'Yes, toggle aspect ratio locking on or off.' }],
+    longContent: 'Resize image files locally with physical DPI calculations.'
+  },
+  'image-tools-compress': {
+    id: 'image-tools-compress',
+    name: 'Compress Image Workstation',
+    category: 'image',
+    shortDescription: 'Reduce photo file size locally while keeping high visual quality.',
+    seoTitle: 'Compress Image Online - Free Photo Size Reducer | ConvertVerse',
+    seoDescription: 'Batch compress JPG, PNG, and WebP images locally inside browser memory. Reduce file size up to 80% without cloud uploads.',
+    keywords: ['compress image', 'reduce image size', 'photo size reducer'],
+    path: '/image-tools/compress-image',
+    canonicalUrl: `${BASE_URL}/image-tools/compress-image`,
+    iconName: 'Image',
+    features: ['Lossless & Lossy Compression Sliders', 'Batch Processing', 'Quality Preview'],
+    benefits: ['Improve site loading speed and lower network bandwidth.'],
+    instructions: ['Upload images.', 'Adjust quality slider.', 'Download shrunken files.'],
+    faqs: [{ question: 'Are files kept private?', answer: 'Yes, all compression occurs in local RAM.' }],
+    longContent: 'Compress images for faster Web Vitals performance.'
+  },
+  'image-tools-remove-bg': {
+    id: 'image-tools-remove-bg',
+    name: 'Remove Background & Censor Workstation',
+    category: 'image',
+    shortDescription: 'Scrub metadata, censor sensitive regions, and blur image backgrounds locally.',
+    seoTitle: 'Remove Background & Censor Photo Online | ConvertVerse',
+    seoDescription: 'Scrub photo EXIF tags, censor face quadrants, and blur image regions locally inside browser memory.',
+    keywords: ['remove background', 'censor photo', 'scrub EXIF metadata'],
+    path: '/image-tools/remove-background',
+    canonicalUrl: `${BASE_URL}/image-tools/remove-background`,
+    iconName: 'Image',
+    features: ['EXIF Metadata Scrubber', 'Facial Quadrant Blur Censor', 'Local Canvas Render'],
+    benefits: ['Protect privacy before posting photos online.'],
+    instructions: ['Upload image.', 'Select region or scrub metadata.', 'Export clean photo.'],
+    faqs: [{ question: 'Does EXIF scrubbing remove GPS tags?', answer: 'Yes, all EXIF headers and GPS tags are stripped.' }],
+    longContent: 'Privacy scrubbing and visual censoring directly in your browser.'
+  },
   'image-compressor': {
     id: 'image-compressor',
     name: 'Image Compressor Workstation',
     category: 'image',
     shortDescription: 'Shrink JPEG, PNG, WebP, and AVIF photo weights up to 80% locally.',
-    seoTitle: 'Image Compressor Online - Reduce Photo File Size Free',
+    seoTitle: 'Image Compressor Online - Reduce Photo File Size Free | ConvertVerse',
     seoDescription: 'Batch compress JPG, PNG, and WebP images locally inside browser memory. Save bandwidth and improve page speeds.',
     keywords: ['image compressor', 'shrink photo size', 'reduce image MB to KB'],
     path: '/image-compressor',
@@ -180,7 +231,7 @@ export const TOOLS_REGISTRY: Record<string, ToolMetaData> = {
     name: 'Universal Image Converter',
     category: 'converter',
     shortDescription: 'Convert between PNG, JPEG, WebP, AVIF, HEIC, and BMP graphic formats.',
-    seoTitle: 'Universal Image Converter | PNG, JPG, WebP, HEIC, AVIF',
+    seoTitle: 'Universal Image Converter | PNG, JPG, WebP, HEIC, AVIF | ConvertVerse',
     seoDescription: 'Convert image files locally between PNG, JPEG, WebP, AVIF, and HEIC formats with 100% browser privacy.',
     keywords: ['image converter', 'png to jpg', 'webp to png', 'heic to jpeg converter'],
     path: '/image-converter',
@@ -197,7 +248,7 @@ export const TOOLS_REGISTRY: Record<string, ToolMetaData> = {
     name: 'PNG to JPG Converter',
     category: 'converter',
     shortDescription: 'Convert heavy transparent PNG graphics to lightweight JPEG images.',
-    seoTitle: 'PNG to JPG Converter Online - Free & Private',
+    seoTitle: 'PNG to JPG Converter Online - Free & Private | ConvertVerse',
     seoDescription: 'Convert PNG images to JPEG format with customizable background fill color and compression controls.',
     keywords: ['png to jpg', 'convert png to jpeg', 'png2jpg free'],
     path: '/png-to-jpg',
@@ -214,7 +265,7 @@ export const TOOLS_REGISTRY: Record<string, ToolMetaData> = {
     name: 'JPG to PNG Converter',
     category: 'converter',
     shortDescription: 'Convert JPEG photos into PNG format with full alpha channel support.',
-    seoTitle: 'JPG to PNG Converter Online - Free & Local',
+    seoTitle: 'JPG to PNG Converter Online - Free & Local | ConvertVerse',
     seoDescription: 'Convert JPG images to PNG format locally in browser memory with zero loss in visual quality.',
     keywords: ['jpg to png', 'convert jpeg to png', 'jpg2png free'],
     path: '/jpg-to-png',
@@ -231,7 +282,7 @@ export const TOOLS_REGISTRY: Record<string, ToolMetaData> = {
     name: 'WebP to PNG Converter',
     category: 'converter',
     shortDescription: 'Convert modern WebP images into full quality PNG graphics.',
-    seoTitle: 'WebP to PNG Converter Online - Preserve Transparency',
+    seoTitle: 'WebP to PNG Converter Online - Preserve Transparency | ConvertVerse',
     seoDescription: 'Convert WebP images to PNG format instantly while preserving full alpha channel transparency.',
     keywords: ['webp to png', 'convert webp to png', 'webp2png free'],
     path: '/webp-to-png',
@@ -248,7 +299,7 @@ export const TOOLS_REGISTRY: Record<string, ToolMetaData> = {
     name: 'Visual PDF Page Editor',
     category: 'pdf',
     shortDescription: 'Rotate, reorder, delete, and visual grid editor for PDF pages.',
-    seoTitle: 'Free Visual PDF Page Editor - Reorder & Rotate PDF Pages',
+    seoTitle: 'Free Visual PDF Page Editor - Reorder & Rotate PDF Pages | ConvertVerse',
     seoDescription: 'Edit PDF layouts visually in your browser. Reorder pages, rotate page orientation, and delete unwanted pages.',
     keywords: ['pdf editor online', 'rotate pdf pages', 'reorder pdf pages'],
     path: '/pdf-editor',
@@ -265,7 +316,7 @@ export const TOOLS_REGISTRY: Record<string, ToolMetaData> = {
     name: 'PDF Security & Protection',
     category: 'security',
     shortDescription: 'Encrypt PDF documents with passwords or unlock protected PDFs locally.',
-    seoTitle: 'PDF Password Security - Encrypt & Unlock PDF Online',
+    seoTitle: 'PDF Password Security - Encrypt & Unlock PDF Online | ConvertVerse',
     seoDescription: 'Protect PDF documents with passwords or unlock password-protected PDFs locally with complete confidentiality.',
     keywords: ['protect pdf password', 'encrypt pdf online', 'unlock pdf file'],
     path: '/pdf-security',
@@ -316,6 +367,7 @@ export const TOOLS_REGISTRY: Record<string, ToolMetaData> = {
 export function resolveToolByPath(pathname: string): ToolMetaData {
   const normalized = pathname.toLowerCase().replace(/\/$/, '') || '/';
   
+  // Direct exact path match in TOOLS_REGISTRY
   for (const key of Object.keys(TOOLS_REGISTRY)) {
     const tool = TOOLS_REGISTRY[key];
     if (tool.path === normalized) {
@@ -323,10 +375,18 @@ export function resolveToolByPath(pathname: string): ToolMetaData {
     }
   }
 
+  // Fallback defaults while preserving normalized path for self-referencing canonicals
   if (normalized === '/' || normalized === '/dashboard') return TOOLS_REGISTRY['dashboard'];
-  if (normalized.startsWith('/pdf')) return TOOLS_REGISTRY['pdf-tools'];
-  if (normalized.startsWith('/image')) return TOOLS_REGISTRY['image-tools'];
-  if (normalized.startsWith('/converters') || normalized.startsWith('/png') || normalized.startsWith('/jpg') || normalized.startsWith('/webp')) return TOOLS_REGISTRY['image-converter'];
+  
+  if (normalized.startsWith('/pdf')) {
+    return { ...TOOLS_REGISTRY['pdf-tools'], path: normalized, canonicalUrl: `${BASE_URL}${normalized}` };
+  }
+  if (normalized.startsWith('/image')) {
+    return { ...TOOLS_REGISTRY['image-tools'], path: normalized, canonicalUrl: `${BASE_URL}${normalized}` };
+  }
+  if (normalized.startsWith('/converters') || normalized.startsWith('/png') || normalized.startsWith('/jpg') || normalized.startsWith('/webp')) {
+    return { ...TOOLS_REGISTRY['image-converter'], path: normalized, canonicalUrl: `${BASE_URL}${normalized}` };
+  }
 
-  return TOOLS_REGISTRY['dashboard'];
+  return { ...TOOLS_REGISTRY['dashboard'], path: normalized, canonicalUrl: `${BASE_URL}${normalized}` };
 }
