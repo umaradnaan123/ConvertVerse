@@ -3,6 +3,68 @@
   "env": {
     "VITE_SITE_URL": "https://convert-verse-8l9l.vercel.app"
   },
+  "redirects": [
+    {
+      "source": "/image-tools/compress-image",
+      "destination": "/image-compressor",
+      "permanent": true
+    },
+    {
+      "source": "/image-tools/resize-image",
+      "destination": "/resize-image",
+      "permanent": true
+    },
+    {
+      "source": "/crop-image",
+      "destination": "/resize-image",
+      "permanent": true
+    },
+    {
+      "source": "/converter",
+      "destination": "/image-converter",
+      "permanent": true
+    },
+    {
+      "source": "/seo-media-optimizer",
+      "destination": "/seo-tools",
+      "permanent": true
+    },
+    {
+      "source": "/pdf-tools/merge-pdf",
+      "destination": "/pdf-merge",
+      "permanent": true
+    },
+    {
+      "source": "/pdf-tools/split-pdf",
+      "destination": "/pdf-split",
+      "permanent": true
+    },
+    {
+      "source": "/pdf-tools/compress-pdf",
+      "destination": "/pdf-compress",
+      "permanent": true
+    },
+    {
+      "source": "/converters/png-to-jpg",
+      "destination": "/png-to-jpg",
+      "permanent": true
+    },
+    {
+      "source": "/converters/webp-to-png",
+      "destination": "/webp-to-png",
+      "permanent": true
+    },
+    {
+      "source": "/batch-automation",
+      "destination": "/batch-tools",
+      "permanent": true
+    },
+    {
+      "source": "/ai-secure-vault",
+      "destination": "/secure-vault",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/(.*)",

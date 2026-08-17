@@ -71,43 +71,43 @@ export function AppRoutes({ history, setHistory, onAddHistory }: AppRoutesProps)
         <Route path="/converters/pressure" element={<UnitConvertersView />} />
         <Route path="/converters/:category" element={<UnitConvertersView />} />
 
-        {/* PDF Suite Dedicated & Direct Alias Routes */}
+        {/* PDF Suite Primary Canonical Routes */}
         <Route path="/pdf-tools" element={<PdfToolbox onAddHistory={onAddHistory} activeSubTab={null} setActiveSubTab={() => {}} />} />
-        <Route path="/pdf-tools/merge-pdf" element={<PdfToolbox onAddHistory={onAddHistory} activeSubTab="merge" setActiveSubTab={() => {}} />} />
         <Route path="/pdf-merge" element={<PdfToolbox onAddHistory={onAddHistory} activeSubTab="merge" setActiveSubTab={() => {}} />} />
-        <Route path="/merge-pdf" element={<PdfToolbox onAddHistory={onAddHistory} activeSubTab="merge" setActiveSubTab={() => {}} />} />
-        <Route path="/pdf-tools/split-pdf" element={<PdfToolbox onAddHistory={onAddHistory} activeSubTab="split" setActiveSubTab={() => {}} />} />
         <Route path="/pdf-split" element={<PdfToolbox onAddHistory={onAddHistory} activeSubTab="split" setActiveSubTab={() => {}} />} />
-        <Route path="/split-pdf" element={<PdfToolbox onAddHistory={onAddHistory} activeSubTab="split" setActiveSubTab={() => {}} />} />
-        <Route path="/pdf-tools/compress-pdf" element={<PdfToolbox onAddHistory={onAddHistory} activeSubTab="compress" setActiveSubTab={() => {}} />} />
         <Route path="/pdf-compress" element={<PdfToolbox onAddHistory={onAddHistory} activeSubTab="compress" setActiveSubTab={() => {}} />} />
-        <Route path="/pdf-compressor" element={<PdfToolbox onAddHistory={onAddHistory} activeSubTab="compress" setActiveSubTab={() => {}} />} />
         <Route path="/pdf-to-word" element={<PdfToolbox onAddHistory={onAddHistory} activeSubTab="compress" setActiveSubTab={() => {}} />} />
         <Route path="/word-to-pdf" element={<PdfToolbox onAddHistory={onAddHistory} activeSubTab="merge" setActiveSubTab={() => {}} />} />
-        <Route path="/watermark-pdf" element={<BatchAutomationStudio />} />
-        <Route path="/unlock-pdf" element={<PdfSecurity onAddHistory={onAddHistory} activeSubTab={null} setActiveSubTab={() => {}} />} />
-        <Route path="/protect-pdf" element={<PdfSecurity onAddHistory={onAddHistory} activeSubTab={null} setActiveSubTab={() => {}} />} />
         <Route path="/pdf-editor" element={<PdfEditor onAddHistory={onAddHistory} activeSubTab={null} setActiveSubTab={() => {}} />} />
-        <Route path="/rotate-image" element={<PdfEditor onAddHistory={onAddHistory} activeSubTab={null} setActiveSubTab={() => {}} />} />
         <Route path="/pdf-security" element={<PdfSecurity onAddHistory={onAddHistory} activeSubTab={null} setActiveSubTab={() => {}} />} />
 
-        {/* Image Suite Dedicated & Direct Alias Routes */}
+        {/* PDF Alias Redirects (HTTP 301 Edge Target) */}
+        <Route path="/pdf-tools/merge-pdf" element={<Navigate to="/pdf-merge" replace />} />
+        <Route path="/pdf-tools/split-pdf" element={<Navigate to="/pdf-split" replace />} />
+        <Route path="/pdf-tools/compress-pdf" element={<Navigate to="/pdf-compress" replace />} />
+        <Route path="/watermark-pdf" element={<Navigate to="/batch-tools" replace />} />
+        <Route path="/unlock-pdf" element={<Navigate to="/pdf-security" replace />} />
+        <Route path="/protect-pdf" element={<Navigate to="/pdf-security" replace />} />
+
+        {/* Image Suite Primary Canonical Routes */}
         <Route path="/image-tools" element={<ImageTools onAddHistory={onAddHistory} activeSubTab={null} setActiveSubTab={() => {}} />} />
-        <Route path="/image-tools/resize-image" element={<ImageTools onAddHistory={onAddHistory} activeSubTab="resize" setActiveSubTab={() => {}} />} />
         <Route path="/resize-image" element={<ImageTools onAddHistory={onAddHistory} activeSubTab="resize" setActiveSubTab={() => {}} />} />
-        <Route path="/crop-image" element={<ImageTools onAddHistory={onAddHistory} activeSubTab="resize" setActiveSubTab={() => {}} />} />
-        <Route path="/image-tools/compress-image" element={<ImageTools onAddHistory={onAddHistory} activeSubTab="compress" setActiveSubTab={() => {}} />} />
         <Route path="/image-compressor" element={<ImageTools onAddHistory={onAddHistory} activeSubTab="compress" setActiveSubTab={() => {}} />} />
         <Route path="/image-tools/remove-background" element={<ImageTools onAddHistory={onAddHistory} activeSubTab="scrub" setActiveSubTab={() => {}} />} />
 
-        {/* Converter Dedicated Routes */}
+        {/* Image Alias Redirects (HTTP 301 Edge Target) */}
+        <Route path="/image-tools/resize-image" element={<Navigate to="/resize-image" replace />} />
+        <Route path="/crop-image" element={<Navigate to="/resize-image" replace />} />
+        <Route path="/image-tools/compress-image" element={<Navigate to="/image-compressor" replace />} />
+
+        {/* Converter Primary & Alias Redirects */}
         <Route path="/image-converter" element={<ConverterCenter onAddHistory={onAddHistory} activeSubTab={null} setActiveSubTab={() => {}} />} />
-        <Route path="/converter" element={<ConverterCenter onAddHistory={onAddHistory} activeSubTab={null} setActiveSubTab={() => {}} />} />
-        <Route path="/converters/png-to-jpg" element={<ConverterCenter onAddHistory={onAddHistory} activeSubTab="jpg" setActiveSubTab={() => {}} />} />
+        <Route path="/converter" element={<Navigate to="/image-converter" replace />} />
         <Route path="/png-to-jpg" element={<ConverterCenter onAddHistory={onAddHistory} activeSubTab="jpg" setActiveSubTab={() => {}} />} />
+        <Route path="/converters/png-to-jpg" element={<Navigate to="/png-to-jpg" replace />} />
         <Route path="/jpg-to-png" element={<ConverterCenter onAddHistory={onAddHistory} activeSubTab="png" setActiveSubTab={() => {}} />} />
-        <Route path="/converters/webp-to-png" element={<ConverterCenter onAddHistory={onAddHistory} activeSubTab="png" setActiveSubTab={() => {}} />} />
         <Route path="/webp-to-png" element={<ConverterCenter onAddHistory={onAddHistory} activeSubTab="png" setActiveSubTab={() => {}} />} />
+        <Route path="/converters/webp-to-png" element={<Navigate to="/webp-to-png" replace />} />
         <Route path="/universal-compressor" element={<UniversalCompressor onAddHistory={onAddHistory} />} />
 
         {/* Advanced Tool Modules */}
@@ -115,11 +115,11 @@ export function AppRoutes({ history, setHistory, onAddHistory }: AppRoutesProps)
         <Route path="/collaboration" element={<RealTimeCollaboration />} />
         <Route path="/ai-content" element={<AIContentCreatorStudio />} />
         <Route path="/secure-vault" element={<AISecureVault />} />
-        <Route path="/ai-secure-vault" element={<AISecureVault />} />
+        <Route path="/ai-secure-vault" element={<Navigate to="/secure-vault" replace />} />
         <Route path="/seo-tools" element={<SeoMediaOptimizer />} />
-        <Route path="/seo-media-optimizer" element={<SeoMediaOptimizer />} />
+        <Route path="/seo-media-optimizer" element={<Navigate to="/seo-tools" replace />} />
         <Route path="/batch-tools" element={<BatchAutomationStudio />} />
-        <Route path="/batch-automation" element={<BatchAutomationStudio />} />
+        <Route path="/batch-automation" element={<Navigate to="/batch-tools" replace />} />
 
         {/* Directory & EEAT Routes */}
         <Route path="/tools" element={<ToolsDirectoryView />} />
@@ -139,8 +139,8 @@ export function AppRoutes({ history, setHistory, onAddHistory }: AppRoutesProps)
 
         {/* Legacy Hash Fallbacks */}
         <Route path="/pdf" element={<Navigate to="/pdf-tools" replace />} />
-        <Route path="/resizer" element={<Navigate to="/image-tools/resize-image" replace />} />
-        <Route path="/compressor" element={<Navigate to="/image-tools/compress-image" replace />} />
+        <Route path="/resizer" element={<Navigate to="/resize-image" replace />} />
+        <Route path="/compressor" element={<Navigate to="/image-compressor" replace />} />
 
         {/* Catch-all 404 Route */}
         <Route path="*" element={<NotFoundView />} />
