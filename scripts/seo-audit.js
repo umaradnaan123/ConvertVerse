@@ -5,13 +5,12 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-const BASE_URL = 'https://convert-verse-8l9l.vercel.app';
-
 function runSeoAudit() {
   const publicDir = path.resolve(__dirname, '../public');
   const sitemapIndexPath = path.join(publicDir, 'sitemap.xml');
   const sitemapPagesPath = path.join(publicDir, 'sitemap-pages.xml');
   const sitemapToolsPath = path.join(publicDir, 'sitemap-tools.xml');
+  const sitemapBlogPath = path.join(publicDir, 'sitemap-blog.xml');
   const robotsPath = path.join(publicDir, 'robots.txt');
 
   let sitemapErrors = 0;
@@ -34,9 +33,9 @@ function runSeoAudit() {
     });
   }
 
-  // Check sitemap pages & tools
+  // Check sitemap pages, tools, and blog sub-sitemaps
   const urlsSet = new Set();
-  [sitemapPagesPath, sitemapToolsPath].forEach(filePath => {
+  [sitemapPagesPath, sitemapToolsPath, sitemapBlogPath].forEach(filePath => {
     if (fs.existsSync(filePath)) {
       const content = fs.readFileSync(filePath, 'utf-8');
       const locMatches = content.match(/<loc>(.*?)<\/loc>/g) || [];
@@ -63,7 +62,7 @@ function runSeoAudit() {
     }
   }
 
-  const totalPages = urlsSet.size || 52;
+  const totalPages = urlsSet.size || 49;
 
   console.log(`
 ==============================================

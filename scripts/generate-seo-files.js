@@ -8,16 +8,12 @@ const __dirname = path.dirname(__filename);
 const BASE_URL = 'https://convert-verse-8l9l.vercel.app';
 const currentDate = new Date().toISOString().split('T')[0];
 
+// Core Landing & Information Routes
 const pageRoutes = [
   { path: '/', priority: '1.0', changefreq: 'daily', title: 'ConvertVerse Workstation' },
   { path: '/converters', priority: '0.9', changefreq: 'weekly', title: 'Online Unit Converters Directory' },
   { path: '/tools', priority: '0.7', changefreq: 'monthly', title: 'All Tools Directory' },
   { path: '/categories', priority: '0.7', changefreq: 'monthly', title: 'Tool Categories Index' },
-  { path: '/blog', priority: '0.7', changefreq: 'monthly', title: 'Technical Blog & Guides' },
-  { path: '/blog/how-to-merge-pdf', priority: '0.8', changefreq: 'monthly', title: 'How to Merge PDF Files Online Free' },
-  { path: '/blog/how-to-compress-pdf', priority: '0.8', changefreq: 'monthly', title: 'How to Compress PDF Files for Email' },
-  { path: '/blog/png-vs-jpg', priority: '0.8', changefreq: 'monthly', title: 'PNG vs JPG Comparison Guide' },
-  { path: '/blog/pdf-security-guide', priority: '0.8', changefreq: 'monthly', title: 'PDF Encryption Security Guide' },
   { path: '/help', priority: '0.7', changefreq: 'monthly', title: 'Help & Support Center' },
   { path: '/about', priority: '0.6', changefreq: 'monthly', title: 'About ConvertVerse' },
   { path: '/contact', priority: '0.6', changefreq: 'monthly', title: 'Contact Support' },
@@ -25,6 +21,15 @@ const pageRoutes = [
   { path: '/disclaimer', priority: '0.5', changefreq: 'monthly', title: 'Legal Disclaimer Notice' },
   { path: '/privacy-policy', priority: '0.5', changefreq: 'monthly', title: 'Privacy Policy' },
   { path: '/terms', priority: '0.5', changefreq: 'monthly', title: 'Terms of Service' }
+];
+
+// Technical Blog & Informational Guide Routes
+const blogRoutes = [
+  { path: '/blog', priority: '0.8', changefreq: 'weekly', title: 'Technical Blog & Guides' },
+  { path: '/blog/how-to-merge-pdf', priority: '0.8', changefreq: 'monthly', title: 'How to Merge PDF Files Online Free' },
+  { path: '/blog/how-to-compress-pdf', priority: '0.8', changefreq: 'monthly', title: 'How to Compress PDF Files for Email' },
+  { path: '/blog/png-vs-jpg', priority: '0.8', changefreq: 'monthly', title: 'PNG vs JPG Comparison Guide' },
+  { path: '/blog/pdf-security-guide', priority: '0.8', changefreq: 'monthly', title: 'PDF Encryption Security Guide' }
 ];
 
 // Strictly Primary Canonical Tool Routes (Zero 301-redirected duplicate aliases)
@@ -111,6 +116,10 @@ function generateSitemapIndex() {
     <lastmod>${currentDate}</lastmod>
   </sitemap>
   <sitemap>
+    <loc>${BASE_URL}/sitemap-blog.xml</loc>
+    <lastmod>${currentDate}</lastmod>
+  </sitemap>
+  <sitemap>
     <loc>${BASE_URL}/sitemap-images.xml</loc>
     <lastmod>${currentDate}</lastmod>
   </sitemap>
@@ -131,16 +140,20 @@ function buildAllSitemaps() {
   fs.writeFileSync(path.join(publicDir, 'sitemap-tools.xml'), generateXmlUrlset(toolRoutes), 'utf-8');
   console.log('✅ sitemap-tools.xml generated with', toolRoutes.length, 'entries');
 
-  // 3. Images Sitemap
-  const allRoutes = [...pageRoutes, ...toolRoutes];
+  // 3. Blog Sitemap
+  fs.writeFileSync(path.join(publicDir, 'sitemap-blog.xml'), generateXmlUrlset(blogRoutes), 'utf-8');
+  console.log('✅ sitemap-blog.xml generated with', blogRoutes.length, 'entries');
+
+  // 4. Images Sitemap
+  const allRoutes = [...pageRoutes, ...toolRoutes, ...blogRoutes];
   fs.writeFileSync(path.join(publicDir, 'sitemap-images.xml'), generateImageUrlset(allRoutes), 'utf-8');
   console.log('✅ sitemap-images.xml generated with', allRoutes.length, 'image entries');
 
-  // 4. Sitemap Index (sitemap.xml)
+  // 5. Sitemap Index (sitemap.xml)
   fs.writeFileSync(path.join(publicDir, 'sitemap.xml'), generateSitemapIndex(), 'utf-8');
-  console.log('✅ sitemap.xml Index generated successfully referencing 3 sub-sitemaps!');
+  console.log('✅ sitemap.xml Index generated successfully referencing 4 sub-sitemaps!');
 
-  // 5. Robots.txt
+  // 6. Robots.txt
   const robotsTxt = `User-agent: *
 Allow: /
 
