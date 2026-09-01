@@ -10,6 +10,7 @@ function runSeoAudit() {
   const sitemapIndexPath = path.join(publicDir, 'sitemap.xml');
   const sitemapPagesPath = path.join(publicDir, 'sitemap-pages.xml');
   const sitemapToolsPath = path.join(publicDir, 'sitemap-tools.xml');
+  const sitemapConvertersPath = path.join(publicDir, 'sitemap-converters.xml');
   const sitemapBlogPath = path.join(publicDir, 'sitemap-blog.xml');
   const robotsPath = path.join(publicDir, 'robots.txt');
 
@@ -33,9 +34,9 @@ function runSeoAudit() {
     });
   }
 
-  // Check sitemap pages, tools, and blog sub-sitemaps
+  // Check all 4 sub-sitemaps
   const urlsSet = new Set();
-  [sitemapPagesPath, sitemapToolsPath, sitemapBlogPath].forEach(filePath => {
+  [sitemapPagesPath, sitemapToolsPath, sitemapConvertersPath, sitemapBlogPath].forEach(filePath => {
     if (fs.existsSync(filePath)) {
       const content = fs.readFileSync(filePath, 'utf-8');
       const locMatches = content.match(/<loc>(.*?)<\/loc>/g) || [];

@@ -13,11 +13,12 @@ async function submitIndexNow() {
   const publicDir = path.resolve(__dirname, '../public');
   const sitemapPagesPath = path.join(publicDir, 'sitemap-pages.xml');
   const sitemapToolsPath = path.join(publicDir, 'sitemap-tools.xml');
+  const sitemapConvertersPath = path.join(publicDir, 'sitemap-converters.xml');
   const sitemapBlogPath = path.join(publicDir, 'sitemap-blog.xml');
 
   const urlList = [];
 
-  [sitemapPagesPath, sitemapToolsPath, sitemapBlogPath].forEach(filePath => {
+  [sitemapPagesPath, sitemapToolsPath, sitemapConvertersPath, sitemapBlogPath].forEach(filePath => {
     if (fs.existsSync(filePath)) {
       const content = fs.readFileSync(filePath, 'utf-8');
       const matches = content.match(/<loc>(.*?)<\/loc>/g) || [];
